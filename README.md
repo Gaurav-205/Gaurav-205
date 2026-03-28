@@ -2,10 +2,10 @@
   <img src="./Mario Github Readme Cover.gif" alt="Banner" width="100%"/>
 </p>
 
-<h1 align="center">Hi, I am Gaurav</h1>
+<h1 align="center">Hi, I am Gaurav Khandelwal</h1>
 
 <p align="center">
-  Software Developer focused on building practical products with clean architecture and real impact.
+  Full-Stack and Flutter Developer building practical digital products with clean architecture and strong user experience.
 </p>
 
 <p align="center">
@@ -13,6 +13,7 @@
     <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github" alt="GitHub Profile" />
   </a>
   <img src="https://img.shields.io/badge/Open%20To-Collaboration-16A34A?style=for-the-badge" alt="Open To Collaboration" />
+  <img src="https://img.shields.io/badge/Focus-Full--Stack%20%7C%20Flutter-0EA5E9?style=for-the-badge" alt="Focus" />
   <img src="https://komarev.com/ghpvc/?username=Gaurav-205&style=for-the-badge&color=0e7490" alt="Profile Views" />
 </p>
 
@@ -22,22 +23,22 @@
 
 ## About Me
 
-- I enjoy building software that is simple to use, easy to maintain, and ready for scale.
-- I like solving real-world problems with end-to-end product thinking.
-- I care deeply about code quality, fundamentals, and long-term maintainability.
+- I build products by blending coding, design, and practical business thinking.
+- I have shipped multiple full-stack apps used by real users and driven measurable outcomes.
+- I enjoy hackathons, product-building sprints, and solving hard implementation problems end to end.
 
 ## Quick Snapshot
 
-- Role: Software Developer
-- Interests: Full Stack Development, DSA, System Design
-- Strengths: Clean code, iterative problem solving, ownership mindset
-- Current Goal: Build stronger production-grade projects and sharpen architecture skills
+- Role: Full-Stack Developer and Flutter Developer
+- Interests: Product Engineering, DSA, Scalable Systems, UI/UX
+- Strengths: Rapid prototyping, clean implementation, ownership mindset
+- Current Goal: Build startup-grade software and stronger production systems
 
 ## Current Focus
 
-- Strengthening data structures and algorithms.
-- Building end-to-end projects with better architecture.
-- Writing cleaner code with strong fundamentals.
+- Building reliable full-stack platforms with better architecture and deployment flow.
+- Shipping mobile experiences in Flutter with real-time features.
+- Improving algorithmic problem solving and backend system design.
 
 ## Development Philosophy
 
@@ -53,11 +54,35 @@
 
 ## What I Work With
 
-- Languages: C++, C, Python, Java, JavaScript, TypeScript
-- Frontend: React
-- Backend: Node.js, Express
-- Databases: MongoDB, MySQL
-- Tools: Git, GitHub, VS Code
+- Languages: Python, Java, C++, C, JavaScript, TypeScript, Dart, SQL
+- Frontend: React, Next.js, Tailwind CSS
+- Backend: Node.js, Express, Socket.IO
+- Mobile: Flutter
+- Databases: MongoDB, MySQL, Firebase Firestore
+- Tools: Git, GitHub, GitHub Actions, Docker, Netlify, Render, VS Code
+
+## Experience Highlights
+
+### Full-Stack Developer (Campus Portal Project)
+- Built a multi-module full-stack platform to unify fragmented student workflows.
+- Added real-time communication and map-enabled navigation for better usability.
+- Implemented CI/CD practices that reduced deployment effort and improved reliability.
+
+### Flutter Developer (Pet Care Booking App)
+- Developed a Flutter app with Firebase-backed authentication and booking workflows.
+- Integrated real-time chat, media upload, and location-based capabilities.
+- Prepared the app foundation for production-ready scaling and store deployment.
+
+### Full-Stack Developer (Festival Platform)
+- Built and launched an event-focused full-stack product under strict timeline constraints.
+- Improved performance through optimization techniques and responsive architecture.
+- Delivered strong engagement outcomes during the launch window.
+
+## Education
+
+- B.Tech in Computer Science and Engineering (Software Product Engineering)
+- MIT Art, Design and Technology University, Pune (Expected 2028)
+- Relevant Coursework: Data Structures and Algorithms, Web Development, Databases, Software Engineering, Product Design
 
 ## GitHub Stats
 
@@ -76,22 +101,30 @@
 
 ## Featured Work
 
-- Project 1: Add repository link and one-line impact summary.
-- Project 2: Add core stack and key technical challenge solved.
-- Project 3: Add measurable result or notable learning.
+- Campus Portal: Full-stack student platform with real-time features and deployment automation.
+- Pet Care App: Flutter and Firebase app for booking, communication, and map-based coordination.
+- Festival Platform: Fast-launched web product focused on performance and user conversion.
+
+## Achievements and Leadership
+
+- 1st Runner-Up in a competitive CodeAthlon challenge.
+- Ranked in top positions in a multi-round coding competition (quiz, debugging, and coding).
+- Startup and innovation participation through campus and external communities.
+- Design Team Lead across student communities, coordinating UI/UX initiatives with cross-functional teams.
 
 ## 2026 Goals
 
-- Build and ship at least 3 high-quality portfolio projects.
-- Improve DSA speed and consistency through regular practice.
-- Learn deeper backend and system design patterns.
-- Contribute more to open source and collaborative projects.
+- Ship higher-impact production projects with clean architecture and measurable outcomes.
+- Strengthen DSA consistency and interview-level problem solving.
+- Expand backend depth in system design and scalability.
+- Contribute to open source and collaborate on meaningful products.
 
 ## Connect
 
 - GitHub: https://github.com/Gaurav-205
 - Portfolio: Add your portfolio link here
 - LinkedIn: Add your LinkedIn profile here
+- Email: gauravdkhandelwal205@gmail.com
 
 ---
 
