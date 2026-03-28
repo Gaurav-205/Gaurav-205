@@ -21,6 +21,33 @@
   <img src="https://skillicons.dev/icons?i=python,java,js,ts,dart,react,nextjs,nodejs,express,flutter,mongodb,mysql,firebase,docker,git,github,vscode" alt="Tech Stack"/>
 </p>
 
+<table>
+  <tr>
+    <td><strong>Languages</strong></td>
+    <td>Python, Java, JavaScript, TypeScript, Dart, C++, C, SQL</td>
+  </tr>
+  <tr>
+    <td><strong>Frontend</strong></td>
+    <td>React, Next.js, Tailwind CSS</td>
+  </tr>
+  <tr>
+    <td><strong>Backend</strong></td>
+    <td>Node.js, Express, Socket.IO, REST APIs</td>
+  </tr>
+  <tr>
+    <td><strong>Mobile</strong></td>
+    <td>Flutter</td>
+  </tr>
+  <tr>
+    <td><strong>Databases</strong></td>
+    <td>MongoDB, MySQL, Firebase Firestore</td>
+  </tr>
+  <tr>
+    <td><strong>DevOps & Tools</strong></td>
+    <td>Git, GitHub, GitHub Actions, Docker, Netlify, Render, VS Code</td>
+  </tr>
+</table>
+
 ## Featured Projects
 
 - KampusKart: Campus portal combining 12 student services with real-time chat and fast CI/CD deployment.
