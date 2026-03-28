@@ -167,7 +167,7 @@ class GauravKhandelwal:
 <div align="center">
 
 <img
-  src="https://github-readme-stats.vercel.app/api?username=Gaurav-205&show_icons=true&theme=github_dark_dimmed&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true&cache_seconds=86400"
+  src="https://github-readme-stats-sigma-five.vercel.app/api?username=Gaurav-205&show_icons=true&theme=github_dark_dimmed&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true&cache_seconds=86400"
   width="495"
   alt="GitHub Stats"
 />
@@ -175,7 +175,7 @@ class GauravKhandelwal:
 <br/>
 
 <img
-  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gaurav-205&layout=compact&theme=github_dark_dimmed&hide_border=true&langs_count=8&cache_seconds=86400"
+  src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Gaurav-205&layout=compact&theme=github_dark_dimmed&hide_border=true&langs_count=8&cache_seconds=86400"
   width="495"
   alt="Top Languages"
 />
