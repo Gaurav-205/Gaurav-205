@@ -1,7 +1,7 @@
 <div align="center">
 
 <img
-  src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Gaurav%20Khandelwal&fontSize=56&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Full-Stack%20Developer%20%E2%80%A2%20Flutter%20Developer%20%E2%80%A2%20Product%20Builder&descAlignY=56&descSize=18"
+  src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,14,30&height=200&section=header&text=Gaurav%20Khandelwal&fontSize=56&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Full-Stack%20Developer%20%E2%80%A2%20Flutter%20Developer%20%E2%80%A2%20Product%20Builder&descAlignY=56&descSize=18"
   width="100%"
   alt="Header Banner"
 />
@@ -72,7 +72,7 @@ class GauravKhandelwal:
     <td>
       <img src="https://skillicons.dev/icons?i=python,java,ts,js,dart,cpp,c,html,css" height="36" alt="Languages"/>
     </td>
-  </tr>
+    src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=21,25,30&height=200&section=header&text=Gaurav%20Khandelwal&fontSize=56&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Full-Stack%20Developer%20%E2%80%A2%20Flutter%20Developer%20%E2%80%A2%20Product%20Builder&descAlignY=56&descSize=18"
   <tr>
     <td align="center"><b>Frontend</b></td>
     <td>
@@ -85,7 +85,7 @@ class GauravKhandelwal:
       <img src="https://skillicons.dev/icons?i=nodejs,express,firebase" height="36" alt="Backend"/>
       &nbsp;
       <img src="https://img.shields.io/badge/Socket.IO-010101?style=flat-square&logo=socketdotio&logoColor=white" height="26" alt="Socket.IO"/>
-      <img src="https://img.shields.io/badge/REST_APIs-4D9EFF?style=flat-square" height="26" alt="REST APIs"/>
+    src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=21,25,30&height=100&section=footer"
     </td>
   </tr>
   <tr>
@@ -219,7 +219,7 @@ class GauravKhandelwal:
 ---
 
 <img
-  src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer"
+  src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,14,30&height=100&section=footer"
   width="100%"
   alt="Footer"
 />
