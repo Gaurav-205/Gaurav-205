@@ -1,5 +1,9 @@
 <div align="center">
 
+<h1>Gaurav Khandelwal</h1>
+
+<p><strong>Full-Stack Developer | Flutter Developer | Product Builder</strong></p>
+
 <img
   src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=2800&pause=700&color=4D9EFF&center=true&vCenter=true&repeat=true&width=760&height=50&lines=Building+real+products+with+real+impact;Shipped+4+full-stack+apps+to+100%2B+users;Focused+on+clean+architecture+and+performance;Working+toward+startup+founder+goals"
   alt="Typing SVG"
@@ -45,26 +49,12 @@
 
 ## About
 
-```python
-class GauravKhandelwal:
-    role = "Full-Stack Developer and Flutter Developer"
-    location = "Pune, Maharashtra, India"
-    education = "MIT ADT University, Pune - B.Tech CSE (Software Product Engineering)"
-
-    impact = [
-        "Shipped 4 full-stack apps used by 100+ users",
-        "Generated INR 20K+ sales through production launch",
-        "Built systems with 99.9% uptime and optimized performance",
-    ]
-
-    currently = [
-        "Maintaining KampusKart Campus Portal",
-        "Preparing Sahara Pet Care App for App Store and Play Store",
-        "Building startup-grade product systems",
-    ]
-
-    open_to = "Internships and collaborations in full-stack and product engineering"
-```
+- Role: Full-Stack Developer and Flutter Developer
+- Location: Pune, Maharashtra, India
+- Education: MIT ADT University, Pune - B.Tech CSE (Software Product Engineering)
+- Impact: Shipped 4 full-stack apps used by 100+ users, generated INR 20K+ sales, and built systems with 99.9% uptime
+- Current Focus: KampusKart Campus Portal maintenance, Sahara app store readiness, startup-grade product systems
+- Open To: Internships and collaborations in full-stack and product engineering
 
 ---
 
@@ -80,99 +70,47 @@ class GauravKhandelwal:
 
 ## Tech Stack
 
-<table>
-  <tr>
-    <td align="center" width="140"><b>Languages</b></td>
-    <td>
-      <img src="https://skillicons.dev/icons?i=python,java,ts,js,dart,cpp,c,html,css" height="36" alt="Languages"/>
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><b>Frontend</b></td>
-    <td>
-      <img src="https://skillicons.dev/icons?i=react,nextjs,tailwind" height="36" alt="Frontend"/>
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><b>Backend</b></td>
-    <td>
-      <img src="https://skillicons.dev/icons?i=nodejs,express,firebase" height="36" alt="Backend"/>
-      &nbsp;
-      <img src="https://img.shields.io/badge/Socket.IO-010101?style=flat-square&logo=socketdotio&logoColor=white" height="26" alt="Socket.IO"/>
-      <img src="https://img.shields.io/badge/REST_APIs-4D9EFF?style=flat-square" height="26" alt="REST APIs"/>
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><b>Mobile</b></td>
-    <td>
-      <img src="https://skillicons.dev/icons?i=flutter" height="36" alt="Flutter"/>
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><b>Databases</b></td>
-    <td>
-      <img src="https://skillicons.dev/icons?i=mongodb,mysql" height="36" alt="Databases"/>
-      &nbsp;
-      <img src="https://img.shields.io/badge/Firestore-FFCA28?style=flat-square&logo=firebase&logoColor=black" height="26" alt="Firestore"/>
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><b>DevOps and Tools</b></td>
-    <td>
-      <img src="https://skillicons.dev/icons?i=git,github,githubactions,docker,netlify,vercel,vscode" height="36" alt="DevOps and Tools"/>
-    </td>
-  </tr>
-</table>
+- Languages: Python, Java, TypeScript, JavaScript, Dart, C++, C, HTML, CSS
+- Frontend: React, Next.js, Tailwind CSS
+- Backend: Node.js, Express, Firebase, Socket.IO, REST APIs
+- Mobile: Flutter
+- Databases: MongoDB, MySQL, Firestore
+- DevOps and Tools: Git, GitHub, GitHub Actions, Docker, Netlify, Vercel, VS Code
 
 ---
 
 ## Featured Projects
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>KampusKart - Campus Portal Website</h3>
-      <p>Consolidated 12 fragmented campus services into a unified platform for students and faculty.</p>
-      <ul>
-        <li>Real-time chat with around 100 ms latency</li>
-        <li>Google Maps-based navigation</li>
-        <li>CI/CD reduced deployment to under 3 minutes</li>
-        <li>24/7 uptime with zero downtime releases</li>
-      </ul>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Sahara - Pet Care App</h3>
-      <p>Production-ready mobile app for pet booking workflows with real-time features.</p>
-      <ul>
-        <li>Real-time chat and media upload support</li>
-        <li>Search, schedule, and confirm booking flow</li>
-        <li>Store-ready architecture with auth and notifications</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Onam - Festival Website</h3>
-      <p>MERN event and e-commerce launch website delivering measurable business outcomes.</p>
-      <ul>
-        <li>68 orders in 7-day launch window</li>
-        <li>INR 20K+ revenue generated</li>
-        <li>62% faster 3G load time via optimization</li>
-        <li>99.9% uptime on Netlify and Render deployment</li>
-      </ul>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Education and Leadership</h3>
-      <ul>
-        <li>B.Tech CSE (Software Product Engineering), MIT ADT Pune (Expected 2028)</li>
-        <li>1st Runner-Up, ValiCQ 2.0 CodeAthon (Feb 2025)</li>
-        <li>Top 2 in MIT ADT 3-round competition (quiz, debugging, coding)</li>
-        <li>GUESSS India Campus Ambassador (Sep-Dec 2025)</li>
-        <li>Design Team Lead, IDEATE Club and Astech Club</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+### KampusKart - Campus Portal Website
+
+- Consolidated 12 fragmented campus services into a unified platform for students and faculty
+- Real-time chat with around 100 ms latency
+- Google Maps-based navigation
+- CI/CD reduced deployment time to under 3 minutes
+- 24/7 uptime with zero downtime releases
+
+### Sahara - Pet Care App
+
+- Production-ready mobile app for pet booking workflows with real-time features
+- Real-time chat and media upload support
+- Search, schedule, and confirm booking flow
+- Store-ready architecture with authentication and notifications
+
+### Onam - Festival Website
+
+- MERN event and e-commerce launch website with measurable outcomes
+- 68 orders in a 7-day launch window
+- INR 20K+ revenue generated
+- 62% faster 3G load time via optimization
+- 99.9% uptime on Netlify and Render deployments
+
+### Education and Leadership
+
+- B.Tech CSE (Software Product Engineering), MIT ADT Pune (Expected 2028)
+- 1st Runner-Up, ValiCQ 2.0 CodeAthon (Feb 2025)
+- Top 2 in MIT ADT 3-round competition (quiz, debugging, coding)
+- GUESSS India Campus Ambassador (Sep-Dec 2025)
+- Design Team Lead, IDEATE Club and Astech Club
 
 ---
 
@@ -182,15 +120,13 @@ class GauravKhandelwal:
 
 <img
   src="https://github-readme-stats-sigma-five.vercel.app/api?username=Gaurav-205&show_icons=true&theme=github_dark_dimmed&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true&cache_seconds=86400"
-  width="495"
+  width="49%"
   alt="GitHub Stats"
 />
 
-<br/>
-
 <img
   src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Gaurav-205&layout=compact&theme=github_dark_dimmed&hide_border=true&langs_count=8&cache_seconds=86400"
-  width="495"
+  width="49%"
   alt="Top Languages"
 />
 
@@ -198,7 +134,7 @@ class GauravKhandelwal:
 
 <img
   src="https://streak-stats.demolab.com?user=Gaurav-205&theme=dark&hide_border=true&border_radius=8&ring=58A6FF&fire=F0883E&currStreakLabel=58A6FF&cache_seconds=86400"
-  width="495"
+  width="70%"
   alt="GitHub Streak"
 />
 
