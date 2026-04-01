@@ -1,12 +1,6 @@
 <div align="center">
 
 <img
-  src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,14,30&height=200&section=header&text=Gaurav%20Khandelwal&fontSize=56&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Full-Stack%20Developer%20%E2%80%A2%20Flutter%20Developer%20%E2%80%A2%20Product%20Builder&descAlignY=56&descSize=18"
-  width="100%"
-  alt="Header Banner"
-/>
-
-<img
   src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=2800&pause=700&color=4D9EFF&center=true&vCenter=true&repeat=true&width=760&height=50&lines=Building+real+products+with+real+impact;Shipped+4+full-stack+apps+to+100%2B+users;Focused+on+clean+architecture+and+performance;Working+toward+startup+founder+goals"
   alt="Typing SVG"
 />
@@ -37,7 +31,7 @@
 
 ---
 
-## <img src="https://cdn.simpleicons.org/bookstack/4D9EFF" width="20" height="20" valign="middle"/> Quick Navigation
+## Quick Navigation
 
 - [About](#about)
 - [Currently Building](#currently-building)
@@ -49,7 +43,7 @@
 
 ---
 
-## <img src="https://cdn.simpleicons.org/files/4D9EFF" width="20" height="20" valign="middle"/> About
+## About
 
 ```python
 class GauravKhandelwal:
@@ -74,7 +68,7 @@ class GauravKhandelwal:
 
 ---
 
-## <img src="https://cdn.simpleicons.org/todoist/4D9EFF" width="20" height="20" valign="middle"/> Currently Building
+## Currently Building
 
 | Project | Stack | Status |
 |---------|-------|--------|
@@ -84,7 +78,7 @@ class GauravKhandelwal:
 
 ---
 
-## <img src="https://cdn.simpleicons.org/stackblitz/4D9EFF" width="20" height="20" valign="middle"/> Tech Stack
+## Tech Stack
 
 <table>
   <tr>
@@ -132,7 +126,7 @@ class GauravKhandelwal:
 
 ---
 
-## <img src="https://cdn.simpleicons.org/github/4D9EFF" width="20" height="20" valign="middle"/> Featured Projects
+## Featured Projects
 
 <table>
   <tr>
@@ -182,7 +176,7 @@ class GauravKhandelwal:
 
 ---
 
-## <img src="https://cdn.simpleicons.org/githubactions/4D9EFF" width="20" height="20" valign="middle"/> GitHub Analytics
+## GitHub Analytics
 
 <div align="center">
 
@@ -212,7 +206,7 @@ class GauravKhandelwal:
 
 ---
 
-## <img src="https://cdn.simpleicons.org/speedtest/4D9EFF" width="20" height="20" valign="middle"/> Key Metrics
+## Key Metrics
 
 <div align="center">
 
@@ -226,7 +220,7 @@ class GauravKhandelwal:
 
 ---
 
-## <img src="https://cdn.simpleicons.org/maildotru/4D9EFF" width="20" height="20" valign="middle"/> Connect
+## Connect
 
 <div align="center">
 
@@ -235,11 +229,3 @@ class GauravKhandelwal:
 [![Phone](https://img.shields.io/badge/Phone-%2B91--89551--42954-00C853?style=for-the-badge&logo=googlemessages&logoColor=white)](tel:+918955142954)
 
 </div>
-
----
-
-<img
-  src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,14,30&height=100&section=footer"
-  width="100%"
-  alt="Footer"
-/>
