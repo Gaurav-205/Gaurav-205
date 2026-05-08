@@ -46,15 +46,14 @@ Currently open to internships, freelance builds, and collaboration on product-fo
 
 | Project | What it proves | Stack | Links |
 |---|---|---|---|
+| KampusKart | All-in-one campus portal with maps, lost & found, complaints, events, facilities, club recruitment, auth, and real-time chat. | React, TypeScript, Node, Express, MongoDB, Socket.IO | [Repo](https://github.com/Gaurav-205/S72_Gaurav_Capstone_KampusKart) · [Live](https://kampuskart.netlify.app) |
 | Onam Festival Website | Full-stack launch site with event, catalog, order, email, and deployment workflows. Generated 68 orders and INR 20K+ launch revenue. | React, Express, MongoDB, GitHub Actions | [Repo](https://github.com/Gaurav-205/Onam) · [Live](https://onammitadt.netlify.app) |
 | Sahara Pet Care | Cross-platform pet care app covering booking, adoption, shopping, chat, Firebase auth, and Firestore data flows. | Flutter, Dart, Firebase, Provider | [Repo](https://github.com/Gaurav-205/Sahara) |
 | Leher | Student mental health support platform with AI support, counselor booking, peer support, and crisis workflows. | React, TypeScript, Node, MongoDB, Socket.IO | [Repo](https://github.com/Gaurav-205/Leher) |
-| Portfolio | Personal portfolio with a modern Next.js stack and interactive 3D gallery. | Next.js, React, Three.js, Tailwind CSS | [Repo](https://github.com/Gaurav-205/Gaurav_Khandelwal) |
 
 ## Currently Building
 
-- KampusKart: a campus portal combining student services, real-time chat, and faculty/student workflows.
-- Better case studies for Onam and Sahara with screenshots, architecture notes, and demo walkthroughs.
+- Case studies for KampusKart, Onam, and Sahara with screenshots, architecture notes, and demo walkthroughs.
 - Cleaner CI/CD, deployment, and testing practices across my public repositories.
 
 ## GitHub Snapshot
