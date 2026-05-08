@@ -10,7 +10,7 @@ Full-stack and Flutter developer building campus tools, booking flows, dashboard
 <a href="https://linkedin.com/in/gaurav-khandelwal-17a127358">
   <img src="https://img.shields.io/badge/LinkedIn-Gaurav%20Khandelwal-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
-<a href="https://gauravkhandelwal.codes">
+<a href="https://gauravkhandelwal.codes">a
   <img src="https://img.shields.io/badge/Portfolio-gauravkhandelwal.codes-111827?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
 </a>
 
