@@ -1,10 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C7B7,100:0A66C2&height=180&section=header&text=Gaurav%20Khandelwal&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Full-stack%20%26%20Flutter%20developer%20building%20campus,%20booking,%20and%20real-time%20apps&descAlignY=58&descSize=16" alt="Gaurav Khandelwal profile banner" />
+# Gaurav Khandelwal
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&duration=2800&pause=900&color=00C7B7&center=true&vCenter=true&width=760&lines=React+%2B+Node+product+builder;Flutter+%2B+Firebase+mobile+app+developer;Campus+tools,+booking+flows,+real-time+chat" alt="Typing intro" />
-
-<br />
+Full-stack and Flutter developer building campus tools, booking flows, dashboards, and real-time product apps.
 
 <a href="mailto:gauravkhandelwal205@gmail.com">
   <img src="https://img.shields.io/badge/Email-gauravkhandelwal205%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
@@ -16,82 +14,78 @@
   <img src="https://img.shields.io/badge/Portfolio-gauravkhandelwal.codes-111827?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
 </a>
 
+<br />
+<br />
+
+<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+<img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" />
+<img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" />
+<img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter" />
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase" />
+
 </div>
 
 ## About
 
-I am a B.Tech CSE student at MIT ADT University who builds practical full-stack and mobile products: campus portals, event and order systems, booking flows, real-time chat, admin dashboards, and Firebase-backed mobile apps.
+I am a B.Tech CSE student at MIT ADT University focused on full-stack product engineering and Flutter app development.
 
-I care about product details that make software usable: clean UI, reliable API design, authentication, database flows, deployment, CI, and documentation that another developer can actually follow.
+I like building practical software that people can actually use: campus portals, event and order systems, booking apps, admin dashboards, real-time chat, and mobile workflows. My best work combines clean UI, reliable backend APIs, authentication, database flows, deployment, and documentation that another developer can follow.
 
 Currently open to internships, freelance builds, and collaboration on product-focused full-stack or Flutter projects.
 
-## Best Work
+## Featured Work
 
-<div align="center">
-
-<a href="https://github.com/Gaurav-205/S72_Gaurav_Capstone_KampusKart">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Gaurav-205&repo=S72_Gaurav_Capstone_KampusKart&theme=tokyonight&hide_border=true" alt="KampusKart repo card" />
-</a>
-<a href="https://github.com/Gaurav-205/Onam">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Gaurav-205&repo=Onam&theme=tokyonight&hide_border=true" alt="Onam repo card" />
-</a>
-<a href="https://github.com/Gaurav-205/Sahara">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Gaurav-205&repo=Sahara&theme=tokyonight&hide_border=true" alt="Sahara repo card" />
-</a>
-<a href="https://github.com/Gaurav-205/LetsSpiceUp">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Gaurav-205&repo=LetsSpiceUp&theme=tokyonight&hide_border=true" alt="LetsSpiceUp repo card" />
-</a>
-
-</div>
-
-| Project | What it proves | Stack | Links |
+| Project | Why it matters | Stack | Links |
 |---|---|---|---|
-| KampusKart | Full-stack campus portal with maps, lost and found, complaints, events, facilities, club recruitment, auth, and real-time chat. | React, TypeScript, Node, Express, MongoDB, Socket.IO | [Repo](https://github.com/Gaurav-205/S72_Gaurav_Capstone_KampusKart) / [Live](https://kampuskart.netlify.app) |
-| Onam Festival Website | Full-stack launch site with event pages, catalog, order APIs, email workflows, CI, and deployment. Generated 68 orders and INR 20K+ launch revenue. | React, Express, MongoDB, GitHub Actions | [Repo](https://github.com/Gaurav-205/Onam) / [Live](https://onammitadt.netlify.app) |
-| Sahara Pet Care | Cross-platform pet care app covering caregiver booking, adoption, shopping, chat, Firebase auth, and Firestore data flows. | Flutter, Dart, Firebase, Provider | [Repo](https://github.com/Gaurav-205/Sahara) |
-| LetsSpiceUp | Next.js and Express product with auth, admin dashboard, wizard flow, MongoDB, CI, Docker, and deployment docs. | Next.js, TypeScript, Express, MongoDB | [Repo](https://github.com/Gaurav-205/LetsSpiceUp) / [Live](https://prankwizard.netlify.app) |
+| **KampusKart** | All-in-one campus portal with maps, lost and found, complaints, events, facilities, club recruitment, auth, and real-time chat. | React, TypeScript, Node, Express, MongoDB, Socket.IO | [Repo](https://github.com/Gaurav-205/S72_Gaurav_Capstone_KampusKart) / [Live](https://kampuskart.netlify.app) |
+| **Onam Festival Website** | Full-stack launch site with event pages, catalog, order APIs, email workflows, CI, and deployment. Generated 68 orders and INR 20K+ launch revenue. | React, Express, MongoDB, GitHub Actions | [Repo](https://github.com/Gaurav-205/Onam) / [Live](https://onammitadt.netlify.app) |
+| **Sahara Pet Care** | Cross-platform pet care app for caregiver booking, adoption, shopping, chat, Firebase auth, and Firestore data flows. | Flutter, Dart, Firebase, Provider | [Repo](https://github.com/Gaurav-205/Sahara) |
+| **LetsSpiceUp** | Next.js and Express product with auth, admin dashboard, wizard flow, MongoDB, Docker, CI, and deployment docs. | Next.js, TypeScript, Express, MongoDB | [Repo](https://github.com/Gaurav-205/LetsSpiceUp) / [Live](https://prankwizard.netlify.app) |
 
-## Project Snapshots
+## Visual Proof
 
-<div align="center">
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <a href="https://kampuskart.netlify.app">
+        <img src="https://raw.githubusercontent.com/Gaurav-205/S72_Gaurav_Capstone_KampusKart/main/frontend/public/images/3.png" alt="KampusKart map screen" width="260" />
+      </a>
+      <br />
+      <strong>KampusKart map</strong>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://kampuskart.netlify.app">
+        <img src="https://raw.githubusercontent.com/Gaurav-205/S72_Gaurav_Capstone_KampusKart/main/frontend/public/images/1.png" alt="KampusKart chat screen" width="260" />
+      </a>
+      <br />
+      <strong>Real-time chat</strong>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://onammitadt.netlify.app">
+        <img src="https://raw.githubusercontent.com/Gaurav-205/Onam/main/frontend/public/picture1.png" alt="Onam website home screen" width="260" />
+      </a>
+      <br />
+      <strong>Onam launch site</strong>
+    </td>
+  </tr>
+</table>
 
-<a href="https://kampuskart.netlify.app">
-  <img width="31%" src="https://raw.githubusercontent.com/Gaurav-205/S72_Gaurav_Capstone_KampusKart/main/frontend/public/images/3.png" alt="KampusKart map screenshot" />
-</a>
-<a href="https://kampuskart.netlify.app">
-  <img width="31%" src="https://raw.githubusercontent.com/Gaurav-205/S72_Gaurav_Capstone_KampusKart/main/frontend/public/images/1.png" alt="KampusKart chat screenshot" />
-</a>
-<a href="https://onammitadt.netlify.app">
-  <img width="31%" src="https://raw.githubusercontent.com/Gaurav-205/Onam/main/frontend/public/picture1.png" alt="Onam website screenshot" />
-</a>
+## What I Work With
 
-</div>
-
-## Tools I Use
-
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,nodejs,express,mongodb,firebase,flutter,dart,tailwind,git,githubactions,netlify,vite" alt="Tech stack icons" />
-
-</div>
+| Area | Tools |
+|---|---|
+| Frontend | React, Next.js, TypeScript, JavaScript, Vite, Tailwind CSS, Material UI |
+| Backend | Node.js, Express, REST APIs, JWT, Passport.js, Socket.IO |
+| Mobile | Flutter, Dart, Provider, Firebase Auth, Cloud Firestore |
+| Data and Infra | MongoDB, Firebase, Cloudinary, Netlify, Render, GitHub Actions |
+| Practices | Auth flows, admin panels, CI/CD, deployment docs, responsive UI, API testing |
 
 ## Currently Building
 
-- Sharper case studies for KampusKart, Onam, Sahara, and LetsSpiceUp with screenshots, architecture notes, and demo walkthroughs.
+- Sharper case studies for KampusKart, Onam, Sahara, and LetsSpiceUp.
 - Cleaner CI/CD, deployment, and testing practices across my public repositories.
 - More polished mobile and dashboard workflows with production-ready documentation.
-
-## GitHub Snapshot
-
-<div align="center">
-
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=Gaurav-205&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" alt="Gaurav's GitHub stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gaurav-205&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Gaurav's top languages" />
-<img src="https://streak-stats.demolab.com?user=Gaurav-205&theme=tokyonight&hide_border=true" alt="Gaurav's GitHub streak" />
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Gaurav-205&theme=tokyo-night&hide_border=true&area=true" alt="Gaurav's GitHub activity graph" />
-
-</div>
 
 ## Contact
 
@@ -101,9 +95,3 @@ The fastest way to reach me is email or LinkedIn.
 - LinkedIn: [Gaurav Khandelwal](https://linkedin.com/in/gaurav-khandelwal-17a127358)
 - Portfolio: [gauravkhandelwal.codes](https://gauravkhandelwal.codes)
 - GitHub: [Gaurav-205](https://github.com/Gaurav-205)
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A66C2,100:00C7B7&height=100&section=footer" alt="Footer wave" />
-
-</div>
