@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+source-photo.jpg
+source-prepped.png
+temp_nobg.png
+debug_contributions.html
