@@ -40,8 +40,7 @@ def generate_info_card(output_path="info-card.svg", is_static=False):
       }
     }
     .anim-fade {
-      opacity: 0;
-      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 """
         for i in range(len(details) + 4): # Details + header elements
