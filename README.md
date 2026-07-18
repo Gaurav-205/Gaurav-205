@@ -17,87 +17,56 @@
 
 ---
 
-## 👨‍💻 About Me
+# GAURAV KHANDELWAL
+### Full-Stack Developer
+📧 [gauravkhandelwal205@gmail.com](mailto:gauravkhandelwal205@gmail.com) | 📱 +91-89551-42954 | 🔗 [LinkedIn](https://www.linkedin.com/in/gaurav-khandelwal-17a127358/) | 🖥️ [Portfolio](https://gauravkhandelwal.codes/) | 💻 [GitHub](https://github.com/Gaurav-205)
 
-Hello! I'm **Gaurav Khandelwal**, a B.Tech Computer Science & Engineering student at **MIT Art, Design & Technology University, Pune** (Batch 2024-2028), specializing in **Software Product Engineering**. 
+## SUMMARY
+Full-stack developer with 3 shipped products including a live e-commerce platform processing 105 orders and INR 48K+ in sales, and a multi-tenant AI outreach platform orchestrating 10,000+ automated emails. Built scalable production systems across MERN, Next.js, Flutter, and Firebase following Agile development practices - 457 users, 58 REST endpoints, real-time chat, AI integrations, CI/CD pipelines, and Docker deployment.
 
-I am a full-stack developer and Flutter builder who loves writing code that solves real-world problems. Whether it's developing campus portals with high test coverage, designing event-based booking lifecycles, or shipping production event commerce apps that process thousands in revenue, I focus on:
-- **Clean Architecture:** Standardized API design, reliable backend logic, and scalable schema design.
-- **Robust Testing:** Creating comprehensive test suites to ensure system stability before shipping.
-- **User-Centric Design:** Combining clean frontend code with smooth UX, shaped by my leadership roles in campus design clubs.
+## PROJECTS
 
----
+### **KampusKart - Campus Portal** | 457 users | [Repo Link](https://github.com/Gaurav-205/S72_Gaurav_Capstone_KampusKart) | [Live](https://kampuskart.netlify.app)
+*React, Node.js, Express, MongoDB, Socket.IO, Google Maps API, Passport.js, Cloudinary, GitHub Actions.*
+*Feb 2025 – Present*
+- Spearheaded the architecture of a full-stack campus portal integrating real-time chat, navigation, complaint ticketing, and event calendars, refactoring into a modular feature-slice design.
+- Maintained an open-source repository with 86 issues, 14 contributors, and 42 forks, coordinating pull requests and merging 365 commits.
+- Operated and scaled the portal to serve 457 campus users across students, faculty, and staff, streamlining daily communication.
+- Diagnosed and resolved database fallback and JSX rendering issues; configured JWT-based socket authentication and CI/CD audit logging.
 
-## 🛠️ Tech Stack
+### **Nova Career - Personal Life and Career Companion** | [Repo Link](https://github.com/Gaurav-205/Orbit) | [Live](https://github.com/Gaurav-205/Orbit)
+*React, Next.js, Node.js, Prisma, PostgreSQL, Redis, BullMQ, OpenAI/Groq APIs, Gmail & Calendar API.*
+*Jun 2026 – Present*
+- Developed a career companion unifying multi-account email/calendar access, automated outreach messaging, and resume management.
+- Integrated OpenAI/Groq APIs with BYOK configuration to power automated outreach drafting.
+- Deployed via PM2 on Windows Server to send 10,000+ AI-personalized outreach emails, receiving positive user feedback on the unified inbox experience.
+- Led the design of secure multi-account OAuth token management with AES-256 encryption, overcoming AI rate limits via BYOK config and template fallback.
 
-| Category | Technologies |
-| --- | --- |
-| **Languages** | TypeScript, JavaScript, Dart, Python, Java, SQL |
-| **Frontend** | React.js, Next.js, Vite, HTML5/CSS3, Tailwind CSS, Material UI |
-| **Backend** | Node.js, Express.js, REST APIs, WebSocket (Socket.IO), Nodemailer |
-| **Databases** | MongoDB, Mongoose ODM, Firebase Cloud Firestore |
-| **Cloud & DevOps** | Git, GitHub, GitHub Actions (CI/CD), Docker, Render, Netlify, Firebase |
-| **Testing & Tools** | Jest, Vitest, React Testing Library, Postman, Figma |
+### **Onam - Event Commerce Platform** | INR 48K+ revenue | 105 Orders | [Repo Link](https://github.com/Gaurav-205/Onam) | [Live](https://onammitadt.netlify.app)
+*React, Express, MongoDB, Nodemailer, GitHub Actions.*
+*Aug 2025 – Sep 2025*
+- Launched a revenue-generating event commerce platform for a 7-day university festival with end-to-end order and payment processing.
+- Collaborated with festival organizers to deliver a centralized platform for ordering food and merchandise, replacing manual/offline processes.
+- Engineered 4 order management APIs (creation, lookup, filtering, status updates) with MongoDB persistence and server-side total validation to ensure accurate transaction records.
+- Configured 6 production controls (feature flags, CORS allowlist, rate limiting, request IDs, health checks, structured logging) for high-traffic reliability.
 
----
+## SKILLS
+- **Languages:** TypeScript, JavaScript, Python, Java, SQL
+- **Frontend:** React.js, Next.js, Tailwind CSS, Material UI, Responsive Web Design
+- **Backend:** Express.js, REST APIs, JWT, OAuth, Socket.IO, Prisma, Mongoose
+- **Databases/Cloud:** MongoDB, PostgreSQL, Redis, Firebase, Cloudinary
+- **Tools/DevOps:** Git, GitHub, GitHub Actions, Docker, CI/CD, Postman
+- **Testing/CS:** Jest, Vitest, Data Structures and Algorithms, OOP
+- **Practices:** Agile/Scrum, System Design, RESTful API Design
 
-## 🚀 Featured Projects
+## ACHIEVEMENTS & EXTRACURRICULAR
+- 1st Runner-Up in a 3-round quiz/debugging/coding competition (ValiCQ 2.0 CodeAthon).
+- Design Team Lead - IDEATE Club & Astech Club: Designed and delivered UI/UX assets for 15+ events.
 
-### 🏫 KampusKart — All-in-One Campus Portal
-*A comprehensive digital campus ecosystem designed to unify university resources, lost-and-found items, complaints, and student communication.*
-- **Tech Stack:** React, TypeScript, Node.js, Express, MongoDB, Socket.IO, Jest
-- **Key Metrics & Impact:**
-  - Shipped to **400+ campus users**.
-  - Developed and documented **58 REST API endpoints**.
-  - Wrote **157 test cases** across **19 frontend/backend test files** to ensure stability.
-  - Built a secure, real-time messaging system using WebSockets.
-
-### 🐕 Sahara — Mobile Pet Care Marketplace
-*A cross-platform Flutter mobile application linking pet owners with verified local caregivers, complete with service discovery and booking workflows.*
-- **Tech Stack:** Flutter, Dart, Firebase Auth & Firestore, Provider, Google Maps API
-- **Key Metrics & Impact:**
-  - Structured **7 state management Provider modules** for core workflows (bookings, auth, cart, geolocation).
-  - Engineered a **5-stage automated booking lifecycle** with timer-based status transitions.
-  - Integrated Google Maps and geolocation APIs for local caregiver discovery.
-
-### 🍁 Onam Festival Website — Event Commerce Platform
-*A production event-booking and merchandise commerce site built and launched for a university cultural festival.*
-- **Tech Stack:** React, Express, MongoDB, Nodemailer, GitHub Actions (CI/CD)
-- **Key Metrics & Impact:**
-  - Processed **105+ successful orders** and generated **INR 40K+ in sales** within 7 days.
-  - Implemented secure server-side checkout validation and order lookup/filtering APIs.
-  - Safeguarded application with rate limiting, strict CORS allowlist, and health check routes.
-
-### 🔥 LetsSpiceUp — Persisted Product Web App
-*A multi-stage guided workflow application featuring robust admin panels and security measures.*
-- **Tech Stack:** Next.js, TypeScript, Express, MongoDB, Docker
-- **Key Metrics & Impact:**
-  - Developed a **4-step persistent wizard workflow** with secure auto-save and recovery.
-  - Handled role-based access control (RBAC), JWT + Google OAuth, and secure admin analytics.
-  - Containerized with Docker and optimized with standard security headers.
-
----
-
-## 🏆 Achievements & Leadership
-
-- **Design Team Lead** at **Astech Club & IDEATE Club** (MIT ADT University) — Leading visual identity, UI/UX prototyping, event marketing assets, and mentoring designers.
-- **1st Runner-Up** in **ValiCQ 2.0 CodeAthon** (Feb 2025) — Outperformed competitors in a 3-round speed quiz, code debugging, and algorithmic challenge.
-- **Postman API Student Expert** (Oct 2025) — Certified in API fundamentals, request execution, mock servers, and automated API testing.
-- **Campus Ambassador** for **GUESSS India 2025** — Managed university outreach and student engagement.
-- **SIH 2024 Volunteer** — Organized and coordinated logistics for the internal Smart India Hackathon.
-
----
-
-## 🎮 Beyond the Terminal
-
-Outside of building products, I maintain strategy and tactical precision through competitive gaming:
-- 🔫 **Valorant:** Peak Rank — **Ascendant 3**
-- ⚔️ **BGMI:** **2x Conqueror** Rank
-- 🏆 **Brawl Stars:** **46,000+ Trophies**
-- 🏰 **Clash of Clans:** **Legend League**
-- 🚜 **Hay Day:** XP Level 62
-
-I also express my creativity through **calligraphy, UI/UX prototyping on Figma, video editing, and painting**.
+## EDUCATION
+**B.Tech Computer Science & Engineering (Software Product Engineering)** | *2024 – 2028*
+- **CGPA:** 8.32 / 10
+- **Institution:** MIT Art, Design & Technology University (MIT ADT), Pune
 
 ---
 

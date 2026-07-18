@@ -8,16 +8,15 @@ def generate_info_card(output_path="info-card.svg", is_static=False):
     
     # Neofetch details
     details = [
-        ("OS", "Ubuntu 22.04 LTS x86_64"),
-        ("Host", "GitHub Profile Profile-v2"),
-        ("Kernel", "Python 3.14.2 & Node.js"),
-        ("Uptime", "100% active, always learning"),
-        ("Shell", "zsh / powershell"),
-        ("Terminal", "SVG Canvas v1.0.3"),
-        ("Now", "Designing high-scale backends & AI agent systems"),
-        ("Prev", "Nova Career platform, subscription & billing pipelines"),
-        ("Stack", "Python, TypeScript, React, PostgreSQL, Docker, AWS"),
-        ("Highlights", "Full-stack optimizations, automated testing, WCAG 2.1 AA")
+        ("OS", "Windows Server / Windows 11"),
+        ("Host", "GitHub Profile (Gaurav-205)"),
+        ("Kernel", "Node.js, Next.js, Flutter"),
+        ("Uptime", "3 shipped products, 457 users"),
+        ("Shell", "PowerShell / Git Bash"),
+        ("Stack", "TypeScript, React, Flutter, Node, Firebase, SQL"),
+        ("Now", "Building scalable MERN, Next.js, and AI systems"),
+        ("Projects", "KampusKart, Nova Career, Onam Event Platform"),
+        ("Highlights", "10k+ AI emails, INR 48K+ sales, 58 endpoints")
     ]
     
     # SVG size parameters

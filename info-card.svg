@@ -108,7 +108,6 @@
     .delay-10 { animation-delay: 0.90s; }
     .delay-11 { animation-delay: 0.98s; }
     .delay-12 { animation-delay: 1.06s; }
-    .delay-13 { animation-delay: 1.14s; }
 
   </style>
   <!-- Terminal Frame -->
@@ -132,84 +131,78 @@
   <g class="anim-fade delay-2 term-text">
     <text x="20" y="84">
       <tspan class="key-color">OS</tspan>
-      <tspan class="val-color">: Ubuntu 22.04 LTS x86_64</tspan>
+      <tspan class="val-color">: Windows Server / Windows 11</tspan>
     </text>
   </g>
   <g class="anim-fade delay-3 term-text">
     <text x="20" y="105">
       <tspan class="key-color">Host</tspan>
-      <tspan class="val-color">: GitHub Profile Profile-v2</tspan>
+      <tspan class="val-color">: GitHub Profile (Gaurav-205)</tspan>
     </text>
   </g>
   <g class="anim-fade delay-4 term-text">
     <text x="20" y="126">
       <tspan class="key-color">Kernel</tspan>
-      <tspan class="val-color">: Python 3.14.2 & Node.js</tspan>
+      <tspan class="val-color">: Node.js, Next.js, Flutter</tspan>
     </text>
   </g>
   <g class="anim-fade delay-5 term-text">
     <text x="20" y="147">
       <tspan class="key-color">Uptime</tspan>
-      <tspan class="val-color">: 100% active, always learning</tspan>
+      <tspan class="val-color">: 3 shipped products, 457 users</tspan>
     </text>
   </g>
   <g class="anim-fade delay-6 term-text">
     <text x="20" y="168">
       <tspan class="key-color">Shell</tspan>
-      <tspan class="val-color">: zsh / powershell</tspan>
+      <tspan class="val-color">: PowerShell / Git Bash</tspan>
     </text>
   </g>
   <g class="anim-fade delay-7 term-text">
     <text x="20" y="189">
-      <tspan class="key-color">Terminal</tspan>
-      <tspan class="val-color">: SVG Canvas v1.0.3</tspan>
+      <tspan class="key-color">Stack</tspan>
+      <tspan class="val-color">: TypeScript, React, Flutter, Node,</tspan>
+    </text>
+    <text x="20" y="204">
+      <tspan class="val-color">       Firebase, SQL</tspan>
     </text>
   </g>
   <g class="anim-fade delay-8 term-text">
-    <text x="20" y="210">
-      <tspan class="key-color">Now</tspan>
-      <tspan class="val-color">: Designing high-scale backends & AI agent</tspan>
-    </text>
     <text x="20" y="225">
+      <tspan class="key-color">Now</tspan>
+      <tspan class="val-color">: Building scalable MERN, Next.js, and AI</tspan>
+    </text>
+    <text x="20" y="240">
       <tspan class="val-color">     systems</tspan>
     </text>
   </g>
   <g class="anim-fade delay-9 term-text">
-    <text x="20" y="246">
-      <tspan class="key-color">Prev</tspan>
-      <tspan class="val-color">: Nova Career platform, subscription &</tspan>
-    </text>
     <text x="20" y="261">
-      <tspan class="val-color">      billing pipelines</tspan>
+      <tspan class="key-color">Projects</tspan>
+      <tspan class="val-color">: KampusKart, Nova Career, Onam Event</tspan>
+    </text>
+    <text x="20" y="276">
+      <tspan class="val-color">          Platform</tspan>
     </text>
   </g>
   <g class="anim-fade delay-10 term-text">
-    <text x="20" y="282">
-      <tspan class="key-color">Stack</tspan>
-      <tspan class="val-color">: Python, TypeScript, React, PostgreSQL,</tspan>
-    </text>
     <text x="20" y="297">
-      <tspan class="val-color">       Docker, AWS</tspan>
-    </text>
-  </g>
-  <g class="anim-fade delay-11 term-text">
-    <text x="20" y="318">
       <tspan class="key-color">Highlights</tspan>
-      <tspan class="val-color">: Full-stack optimizations, automated</tspan>
+      <tspan class="val-color">: 10k+ AI emails, INR 48K+ sales, 58</tspan>
     </text>
-    <text x="20" y="333">
-      <tspan class="val-color">            testing, WCAG 2.1 AA</tspan>
+    <text x="20" y="312">
+      <tspan class="val-color">            endpoints</tspan>
     </text>
   </g>
   <!-- ANSI Color Blocks -->
-  <g class="anim-fade delay-12">
-    <rect class="c-black" x="20" y="359" width="18" height="14" rx="2" />
-    <rect class="c-red" x="44" y="359" width="18" height="14" rx="2" />
-    <rect class="c-green" x="68" y="359" width="18" height="14" rx="2" />
-    <rect class="c-yellow" x="92" y="359" width="18" height="14" rx="2" />
-    <rect class="c-blue" x="116" y="359" width="18" height="14" rx="2" />
-    <rect class="c-magenta" x="140" y="359" width="18" height="14" rx="2" />
-    <rect class="c-cyan" x="164" y="359" width="18" height="14" rx="2" />
-    <rect class="c-white" x="188" y="359" width="18" height="14" rx="2" />
+  <g class="anim-fade delay-11">
+    <rect class="c-black" x="20" y="338" width="18" height="14" rx="2" />
+    <rect class="c-red" x="44" y="338" width="18" height="14" rx="2" />
+    <rect class="c-green" x="68" y="338" width="18" height="14" rx="2" />
+    <rect class="c-yellow" x="92" y="338" width="18" height="14" rx="2" />
+    <rect class="c-blue" x="116" y="338" width="18" height="14" rx="2" />
+    <rect class="c-magenta" x="140" y="338" width="18" height="14" rx="2" />
+    <rect class="c-cyan" x="164" y="338" width="18" height="14" rx="2" />
+    <rect class="c-white" x="188" y="338" width="18" height="14" rx="2" />
   </g>
 </svg>
