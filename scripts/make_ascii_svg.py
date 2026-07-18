@@ -130,7 +130,7 @@ def generate_svg(ascii_rows, output_path="avi-ascii.svg"):
 
 if __name__ == "__main__":
     input_img = "source-prepped.png"
-    output_svg = "avi-ascii.svg"
+    output_svg = "gaurav-ascii.svg"
     
     if len(sys.argv) > 1:
         input_img = sys.argv[1]
