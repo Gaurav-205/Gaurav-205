@@ -181,18 +181,14 @@ def hero():
 <text class="r" {d(0.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="{INK}">Gaurav</text>
 <text class="r" {d(0.3)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Khandelwal</text>
 <g class="r" {d(0.55)}>
-  {text_lines(48, 338, ["I build campus apps, AI tools and data", "dashboards, mostly in TypeScript and Python."], 27, f'font-family="{SANS}" font-size="18" fill="{INK_SOFT}"')}
-</g>
-<g class="f" {d(0.8)}>
-  <text x="48" y="396" font-family="{MONO}" font-size="13" fill="{INK}">github.com/Gaurav-205</text>
-  <text class="nu" x="220" y="396" font-family="{MONO}" font-size="13" fill="{TECH_TEXT}">&#8599;</text>
+  {text_lines(48, 338, ["I love building things people actually use:", "campus apps, AI tools and data dashboards.", "Always shipping, always learning!"], 27, f'font-family="{SANS}" font-size="18" fill="{INK_SOFT}"')}
 </g>
 <g transform="translate(520 46) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
   {''.join(portrait)}
 </g>
 """
     write("hero.svg", svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
-                          "Gaurav Khandelwal. Business analyst intern at EkStep. I build campus apps, AI tools and data dashboards, mostly in TypeScript and Python."))
+                          "Gaurav Khandelwal. Business analyst intern at EkStep. I love building things people actually use: campus apps, AI tools and data dashboards. Always shipping, always learning!"))
 
 
 # ---- 2 · world tiles ----------------------------------------------------------
