@@ -46,6 +46,14 @@ cols = max(len(l) for l in lines)
 img = avatar.convert("RGB").resize((cols, len(lines)), Image.LANCZOS).load()
 
 
+def backdrop_alpha(r, g, b, bg=(2, 186, 255)):
+    """0 on the flat #02BAFF backdrop, 255 on the figure, soft in between.
+    Colour distance instead of a hue rule, because the hoodie's lower edge is a
+    light blue close to the backdrop."""
+    dist = ((r - bg[0]) ** 2 + (g - bg[1]) ** 2 + (b - bg[2]) ** 2) ** 0.5
+    return max(0, min(255, int((dist - 22) / (45 - 22) * 255)))
+
+
 def colour(x, y):
     r, g, b = (v / 255 for v in img[x, y])
     if 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.22:  # the drawing's black line work stays ink
@@ -81,15 +89,15 @@ svg = ('<svg xmlns="http://www.w3.org/2000/svg" width="840" height="880" viewBox
 open(OUT, "w").write(svg)
 
 # soft colour layer drawn behind the ASCII by the hero card: the avatar with its
-# backdrop made transparent, small and slightly blurred so it reads as colour, not detail
-from PIL import ImageFilter
-lay = avatar.convert("RGBA").resize((200, 200), Image.LANCZOS).filter(ImageFilter.GaussianBlur(1.2))
+# backdrop made transparent. 400px is a bit over 2x the size it is shown at, so it
+# stays sharp on retina screens.
+lay = avatar.convert("RGBA").resize((400, 400), Image.LANCZOS)
 lp = lay.load()
-for yy in range(200):
-    for xx in range(200):
+for yy in range(400):
+    for xx in range(400):
         r, g, b, _ = lp[xx, yy]
-        if b > 200 and r < 90 and g > 150:
-            lp[xx, yy] = (0, 0, 0, 0)
+        fade = min(1, (400 - yy) / 70)  # the avatar is cut off at the bottom; fade it out instead of a hard edge
+        lp[xx, yy] = (r, g, b, int(backdrop_alpha(r, g, b) * fade))
 lay.save(os.path.join(ROOT, "gaurav-underlay.png"), optimize=True)
 print("wrote gaurav-underlay.png")
 print(f"wrote {OUT}: {len(out)} rows x {cols} cols ({len(svg) // 1024} KB)")
