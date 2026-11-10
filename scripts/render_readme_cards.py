@@ -165,12 +165,14 @@ def hero():
     s = 0.41
     body = f"""
 <defs>
-  <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
-    <stop offset="0" stop-color="{INK}"/><stop offset=".42" stop-color="{INK}"/>
-    <stop offset=".5" stop-color="{TECH_TEXT}"/><stop offset=".58" stop-color="{INK}"/>
+  <!-- one diagonal band of avatar blue sweeps across both lines of the name -->
+  <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="80" x2="560" y2="300">
+    <stop offset="0" stop-color="{INK}"/><stop offset=".36" stop-color="{INK}"/>
+    <stop offset=".45" stop-color="{TECH_TEXT}"/><stop offset=".5" stop-color="{TECH}"/>
+    <stop offset=".55" stop-color="{TECH_TEXT}"/><stop offset=".64" stop-color="{INK}"/>
     <stop offset="1" stop-color="{INK}"/>
-    <animateTransform attributeName="gradientTransform" type="translate" values="-600 0;600 0;600 0"
-      keyTimes="0;.45;1" dur="7s" begin="1.6s" repeatCount="indefinite"/>
+    <animateTransform attributeName="gradientTransform" type="translate" values="-640 0;640 0;640 0"
+      keyTimes="0;.5;1" dur="6s" begin="1.2s" repeatCount="indefinite"/>
   </linearGradient>
 </defs>
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
@@ -178,17 +180,17 @@ def hero():
   <rect class="live" x="48" y="49" width="8" height="8" rx="2" fill="{TECH}"/>
   <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">BUSINESS ANALYST INTERN AT EKSTEP</text>
 </g>
-<text class="r" {d(0.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="{INK}">Gaurav</text>
+<text class="r" {d(0.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Gaurav</text>
 <text class="r" {d(0.3)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Khandelwal</text>
 <g class="r" {d(0.55)}>
-  {text_lines(48, 338, ["I'm a developer who believes software can make", "a real difference. Always learning, I build AI", "and data tools that inspire positive change."], 27, f'font-family="{SANS}" font-size="18" fill="{INK_SOFT}"')}
+  {text_lines(48, 338, ["Curious builder turning AI and data into", "tools that make a real difference."], 27, f'font-family="{SANS}" font-size="18" fill="{INK_SOFT}"')}
 </g>
 <g transform="translate(520 46) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
   {''.join(portrait)}
 </g>
 """
     write("hero.svg", svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
-                          "Gaurav Khandelwal. Business analyst intern at EkStep. I'm a developer who believes software can make a real difference. Always learning, I build AI and data tools that inspire positive change."))
+                          "Gaurav Khandelwal. Business analyst intern at EkStep. Curious builder turning AI and data into tools that make a real difference."))
 
 
 # ---- 2 · world tiles ----------------------------------------------------------
