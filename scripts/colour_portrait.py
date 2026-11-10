@@ -11,7 +11,9 @@ make_ascii_svg.py resizes the whole image to COLS x ROWS without cropping, so
 cell (x, y) maps straight onto the resized avatar.
 
 Colours are darkened and saturated, because pale colours on the paper card read
-as washed out, and glyphs are bold for the same reason. White hair and glasses take a deep slate version of the avatar blue.
+as washed out, and glyphs are bold for the same reason. It also writes
+gaurav-underlay.png, a faded colour copy of the avatar that the hero draws behind
+the characters. White hair and glasses take a deep slate version of the avatar blue.
 
     python scripts/colour_portrait.py base-ascii.svg [avatar.png]
 """
@@ -46,6 +48,8 @@ img = avatar.convert("RGB").resize((cols, len(lines)), Image.LANCZOS).load()
 
 def colour(x, y):
     r, g, b = (v / 255 for v in img[x, y])
+    if 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.22:  # the drawing's black line work stays ink
+        return "#111111"
     h, l, s = colorsys.rgb_to_hls(r, g, b)
     if s < 0.15:
         h, s = TINT_HUE, TINT_SAT
@@ -75,4 +79,17 @@ for (y, _), line in zip(rows, lines):
 svg = ('<svg xmlns="http://www.w3.org/2000/svg" width="840" height="880" viewBox="0 0 840 880" '
        f'font-family="ui-monospace, monospace">{"".join(out)}</svg>')
 open(OUT, "w").write(svg)
+
+# soft colour layer drawn behind the ASCII by the hero card: the avatar with its
+# backdrop made transparent, small and slightly blurred so it reads as colour, not detail
+from PIL import ImageFilter
+lay = avatar.convert("RGBA").resize((200, 200), Image.LANCZOS).filter(ImageFilter.GaussianBlur(1.2))
+lp = lay.load()
+for yy in range(200):
+    for xx in range(200):
+        r, g, b, _ = lp[xx, yy]
+        if b > 200 and r < 90 and g > 150:
+            lp[xx, yy] = (0, 0, 0, 0)
+lay.save(os.path.join(ROOT, "gaurav-underlay.png"), optimize=True)
+print("wrote gaurav-underlay.png")
 print(f"wrote {OUT}: {len(out)} rows x {cols} cols ({len(svg) // 1024} KB)")

@@ -28,6 +28,7 @@ OUT = os.path.join(ROOT, "cards")
 FONTS = os.path.join(ROOT, "fonts")
 PORTRAIT = os.path.join(ROOT, "gaurav-ascii.svg")
 PORTRAIT_FONT = 7.2  # same as the reference: 180 columns across 800px
+UNDERLAY = os.path.join(ROOT, "gaurav-underlay.png")  # soft colour layer behind the ASCII (colour_portrait.py)
 
 # ---- fallback numbers, used only when the GitHub API is unreachable -------------
 FALLBACK_COUNTS = {"own": 16, "live": 8, "forks": 10}
@@ -156,6 +157,11 @@ def hero():
     rows = re.findall(r'<text xml:space="preserve"[^>]*\by="([\d.]+)"[^>]*>(.*?)</text>', src, re.S)
     n = len(rows)
     portrait = []
+    underlay = ""
+    if os.path.exists(UNDERLAY):
+        b64 = base64.b64encode(open(UNDERLAY, "rb").read()).decode()
+        underlay = (f'<image class="f" style="animation-delay:1.2s;animation-duration:1.4s" x="20" y="37" width="800" '
+                    f'height="800" opacity=".45" href="data:image/png;base64,{b64}"/>')
     for i, (y, txt) in enumerate(rows):
         # rows "print" top to bottom like a slow terminal
         portrait.append(
@@ -187,6 +193,7 @@ def hero():
   {text_lines(48, 338, ["Curious builder turning AI and data into", "tools that make a real difference."], 27, f'font-family="{SANS}" font-size="18" fill="{INK_SOFT}"')}
 </g>
 <g transform="translate(520 46) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  {underlay}
   {''.join(portrait)}
 </g>
 """
