@@ -307,40 +307,6 @@ def activity(data):
                               f'{data["total_contributions"]:,} contributions in the last year, {cs}-day streak'))
 
 
-# ---- 4 · repo cards -----------------------------------------------------------
-REPO_W, REPO_H = 880 / 3 - 8, 176
-REPOS = [
-    ("KampusKart", "Your campus in one app: events, lost and found, complaints, clubs and live chat.", "TypeScript", TECH),
-    ("AI-IoT-Based-Smart-Screen", "Smart Screens: campus screens on Raspberry Pi with approved, scheduled broadcasts.", "TypeScript", STUDIO),
-    ("Munim", "Reads invoice photos on-device and works out what a small supplier is owed.", "Python", LEARN),
-]
-
-
-def repo_card(i, name, desc, lang, color, stars):
-    delay = 4.6 + i * 0.12
-    meta = f"{lang}  ·  ★ {stars}" if stars else f"{lang}  ·  live"
-    body = f"""
-<rect width="{REPO_W}" height="{REPO_H}" rx="14" fill="{PAPER}"/>
-<g class="r" {d(delay)}>
-  <rect x="24" y="30" width="8" height="8" rx="2" fill="{color}"/>
-  <text x="40" y="39" font-family="{SANS}" font-weight="600" font-size="18" fill="{INK}">{escape(name)}</text>
-  {text_lines(24, 72, wrap(desc, 34), 21, f'font-family="{SANS}" font-size="14" fill="{INK_SOFT}"')}
-  <text x="24" y="{REPO_H - 24}" font-family="{MONO}" font-size="12" fill="{MUTED}">{escape(meta)}</text>
-</g>
-"""
-    write(f"repo-{name}.svg", svg(REPO_W, REPO_H, body, ["sans", "sans-b", "mono"], f"{name}: {desc}",
-                                  left=4 * i, right=8 - 4 * i))
-
-
-def section_title(text, italic, theme):
-    fg = "#e6edf3" if theme == "dark" else INK
-    body = (
-        f'<text class="r" {d(4.4)} x="2" y="46" font-family="{SERIF}" font-size="34" fill="{fg}">{escape(text)} '
-        f'<tspan font-style="italic">{escape(italic)}</tspan></text>'
-    )
-    write(f"title-coding-{theme}.svg", svg(W, 64, body, ["serif", "serif-i"], f"{text} {italic}", bottom=0))
-
-
 # ---- 5 · blue contribution graph -----------------------------------------------
 BLUE = [PAPER_DEEP, "#c4ecff", "#8ad9ff", "#4cc8ff", TECH, "#0089c7"]
 
@@ -411,20 +377,6 @@ def github_counts():
         return FALLBACK_COUNTS
 
 
-def repo_stars():
-    stars = {}
-    try:
-        import requests
-
-        for name, *_ in REPOS:
-            r = requests.get(f"https://api.github.com/repos/Gaurav-205/{name}", timeout=10)
-            if r.ok:
-                stars[name] = r.json().get("stargazers_count", 0)
-    except Exception as e:  # offline: keep going without stars
-        print(f"stars unavailable: {e}")
-    return stars
-
-
 if __name__ == "__main__":
     data = json.load(open(DATA))
     hero()
@@ -436,9 +388,4 @@ if __name__ == "__main__":
     tile("learn", "LEARN", LEARN, INK, str(counts["forks"]), "forks",
          "Agent harnesses, GPU sharing and container runtimes I'm reading.", 3.6, 2)
     activity(data)
-    stars = repo_stars()
-    for i, (name, desc, lang, color) in enumerate(REPOS):
-        repo_card(i, name, desc, lang, color, stars.get(name))
-    section_title("What I'm", "coding", "dark")
-    section_title("What I'm", "coding", "light")
     heatmap(data)
