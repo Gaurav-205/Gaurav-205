@@ -2,9 +2,9 @@
      by .github/workflows/update-profile-art.yml. Spacing is baked into the SVGs, so keep this block
      free of blank lines and keep the cards in a row on one line with no spaces between them. -->
 <div align="center">
-<img src="./cards/hero.svg?v=6" width="100%" alt="Gaurav Khandelwal. Business analyst intern at EkStep. Curious builder turning AI and data into tools that make a real difference." /><br>
-<img src="./cards/heatmap.svg?v=6" width="100%" alt="Gaurav's contribution graph, in blue, refreshed daily" /><br>
-<img src="./cards/activity.svg?v=6" width="100%" alt="Contributions in the last 12 months, by month, with streak and busiest day" /><br>
-<a href="https://github.com/Gaurav-205?tab=repositories&type=source"><img src="./cards/build.svg?v=6" width="33.333%" alt="BUILD: public repos of my own" /></a><a href="https://github.com/Gaurav-205/KampusKart"><img src="./cards/brand.svg?v=6" width="33.333%" alt="SHIP: repos with a live app" /></a><a href="https://github.com/Gaurav-205?tab=repositories&type=fork"><img src="./cards/learn.svg?v=6" width="33.333%" alt="LEARN: repos forked to study" /></a>
+<img src="./cards/hero.svg?v=7" width="100%" alt="Gaurav Khandelwal. Business analyst intern at EkStep. Curious builder turning AI and data into tools that make a real difference." /><br>
+<img src="./cards/heatmap.svg?v=7" width="100%" alt="Gaurav's contribution graph, in blue, refreshed daily" /><br>
+<img src="./cards/activity.svg?v=7" width="100%" alt="Contributions in the last 12 months, by month, with streak and busiest day" /><br>
+<a href="https://github.com/Gaurav-205?tab=repositories&type=source"><img src="./cards/build.svg?v=7" width="33.333%" alt="BUILD: public repos of my own" /></a><a href="https://github.com/Gaurav-205/KampusKart"><img src="./cards/brand.svg?v=7" width="33.333%" alt="SHIP: repos with a live app" /></a><a href="https://github.com/Gaurav-205?tab=repositories&type=fork"><img src="./cards/learn.svg?v=7" width="33.333%" alt="LEARN: repos forked to study" /></a>
 </div>
 

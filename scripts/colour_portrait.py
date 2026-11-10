@@ -29,8 +29,9 @@ OUT = os.path.join(ROOT, "gaurav-ascii.svg")
 COLS, ROWS = 180, 96          # same grid as make_ascii_svg.py
 TOP, STEP_Y = 43.2, 8.333     # row baselines, as in the reference portrait
 RAMP = "-=+*#%@"              # light -> dark, dense glyphs only
-MAX_LUM = 0.46                # lighter colours are scaled down to this
-SAT = 1.6                     # saturation boost
+MAX_LUM = 0.40                # lighter colours are scaled down to this
+SAT = 1.8                     # saturation boost
+TINT_HUE, TINT_SAT = 0.54, 0.65  # whites and greys (hair, glasses) take the avatar blue (#02BAFF)
 QUANT = 24                    # colour rounding, so neighbours share one tspan
 
 if len(sys.argv) > 1:
@@ -64,6 +65,8 @@ def cell(x, y):
     lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
     ch = RAMP[min(len(RAMP) - 1, int((1 - lum) * len(RAMP)))]
     h, l, s = colorsys.rgb_to_hls(r, g, b)
+    if s < 0.15 and lum > 0.25:  # near-white or grey, not the black outlines
+        h, s = TINT_HUE, TINT_SAT
     r, g, b = colorsys.hls_to_rgb(h, l, min(1, s * SAT))
     if lum > MAX_LUM:
         r, g, b = (v * MAX_LUM / lum for v in (r, g, b))
@@ -83,7 +86,7 @@ for y in range(ROWS):
         run += ch
     parts.append(html.escape(run) if fill is None else f'<tspan fill="{fill}">{html.escape(run)}</tspan>')
     rows.append(f'<text xml:space="preserve" x="20" y="{TOP + y * STEP_Y:.1f}" font-size="7.2" '
-                f'textLength="800" lengthAdjust="spacing">{"".join(parts)}</text>')
+                f'textLength="800" lengthAdjust="spacing"><tspan font-weight="700">{"".join(parts)}</tspan></text>')
 
 svg = ('<svg xmlns="http://www.w3.org/2000/svg" width="840" height="880" viewBox="0 0 840 880" '
        f'font-family="ui-monospace, monospace">{"".join(rows)}</svg>')
