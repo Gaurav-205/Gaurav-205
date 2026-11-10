@@ -27,7 +27,6 @@ DATA = os.path.join(ROOT, "data", "contributions.json")
 OUT = os.path.join(ROOT, "cards")
 FONTS = os.path.join(ROOT, "fonts")
 PORTRAIT = os.path.join(ROOT, "gaurav-ascii.svg")
-PORTRAIT_FONT = 15  # this portrait is 85 columns, not 180, so glyphs are drawn larger to fill the same width
 
 # ---- fallback numbers, used only when the GitHub API is unreachable -------------
 FALLBACK_COUNTS = {"own": 16, "live": 8, "forks": 10}
@@ -159,7 +158,7 @@ def hero():
         # rows "print" top to bottom like a slow terminal
         portrait.append(
             f'<text class="f" style="animation-delay:{0.25 + i * 0.018:.3f}s;animation-duration:.35s" '
-            f'xml:space="preserve" x="20" y="{y}" fill="{INK}" font-size="{PORTRAIT_FONT}" '
+            f'xml:space="preserve" x="20" y="{y}" fill="{INK}" font-size="7.2" '
             f'textLength="800" lengthAdjust="spacing">{txt}</text>'
         )
     s = 0.41
@@ -176,7 +175,7 @@ def hero():
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
 <g class="f" {d(0)}>
   <rect class="live" x="48" y="49" width="8" height="8" rx="2" fill="{TECH}"/>
-  <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">PUNE, MAHARASHTRA</text>
+  <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">BUSINESS ANALYST INTERN AT EKSTEP</text>
 </g>
 <text class="r" {d(0.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="{INK}">Gaurav</text>
 <text class="r" {d(0.3)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Khandelwal</text>
@@ -192,7 +191,7 @@ def hero():
 </g>
 """
     write("hero.svg", svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
-                          "Gaurav Khandelwal, Pune. I build campus apps, AI tools and data dashboards, mostly in TypeScript and Python."))
+                          "Gaurav Khandelwal. Business analyst intern at EkStep. I build campus apps, AI tools and data dashboards, mostly in TypeScript and Python."))
 
 
 # ---- 2 · world tiles ----------------------------------------------------------
@@ -311,8 +310,8 @@ def activity(data):
 REPO_W, REPO_H = 880 / 3 - 8, 176
 REPOS = [
     ("KampusKart", "Your campus in one app: events, lost and found, complaints, clubs and live chat.", "TypeScript", TECH),
-    ("LetsSpiceUp", "Prank Wizard: plan, track and manage pranks, with an admin dashboard.", "TypeScript", STUDIO),
-    ("Kalvium-Quiz-Automaion", "kalbot: works through a Kalvium semester's quizzes and assignments with an LLM.", "Python", LEARN),
+    ("AI-IoT-Based-Smart-Screen", "Smart Screens: campus screens on Raspberry Pi with approved, scheduled broadcasts.", "TypeScript", STUDIO),
+    ("Munim", "Reads invoice photos on-device and works out what a small supplier is owed.", "Python", LEARN),
 ]
 
 
