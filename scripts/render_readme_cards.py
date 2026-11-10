@@ -38,7 +38,8 @@ INK = "#111111"
 INK_SOFT = "#3a3a3c"
 MUTED = "#6e6e73"
 RULE = "#dcdcd7"
-TECH = "#2f55ff"
+TECH = "#02baff"  # the blue behind the GitHub avatar
+TECH_TEXT = "#0079b8"  # same hue, dark enough for small text on paper
 STUDIO = "#ef3b2d"
 LEARN = "#ffc81a"
 W = 880  # full card width, GitHub's README column at 100%
@@ -166,7 +167,7 @@ def hero():
 <defs>
   <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
     <stop offset="0" stop-color="{INK}"/><stop offset=".42" stop-color="{INK}"/>
-    <stop offset=".5" stop-color="{TECH}"/><stop offset=".58" stop-color="{INK}"/>
+    <stop offset=".5" stop-color="{TECH_TEXT}"/><stop offset=".58" stop-color="{INK}"/>
     <stop offset="1" stop-color="{INK}"/>
     <animateTransform attributeName="gradientTransform" type="translate" values="-600 0;600 0;600 0"
       keyTimes="0;.45;1" dur="7s" begin="1.6s" repeatCount="indefinite"/>
@@ -184,7 +185,7 @@ def hero():
 </g>
 <g class="f" {d(0.8)}>
   <text x="48" y="396" font-family="{MONO}" font-size="13" fill="{INK}">github.com/Gaurav-205</text>
-  <text class="nu" x="220" y="396" font-family="{MONO}" font-size="13" fill="{TECH}">&#8599;</text>
+  <text class="nu" x="220" y="396" font-family="{MONO}" font-size="13" fill="{TECH_TEXT}">&#8599;</text>
 </g>
 <g transform="translate(520 46) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
   {''.join(portrait)}
@@ -274,7 +275,7 @@ def activity(data):
         if is_best:
             bars.append(
                 f'<text class="p" style="animation-delay:3.2s" x="{x + bw / 2:.1f}" y="{base - bh - 10}" '
-                f'text-anchor="middle" font-family="{MONO}" font-size="11" fill="{TECH}">{m["total"]:,}</text>'
+                f'text-anchor="middle" font-family="{MONO}" font-size="11" fill="{TECH_TEXT}">{m["total"]:,}</text>'
             )
     cs = data["current_streak"]["length"]
     ls = data["longest_streak"]["length"]
@@ -341,7 +342,7 @@ def section_title(text, italic, theme):
 
 
 # ---- 5 · blue contribution graph -----------------------------------------------
-BLUE = [PAPER_DEEP, "#c8d3ff", "#94a8ff", "#6280ff", TECH, "#1a3be0"]
+BLUE = [PAPER_DEEP, "#c4ecff", "#8ad9ff", "#4cc8ff", TECH, "#0089c7"]
 
 
 def level_for(c):
@@ -382,7 +383,7 @@ def heatmap(data):
     h = gy + 7 * step + 44
     body = f"""
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
-<text class="r" {d(0.8)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{INK}">Every day, <tspan font-style="italic" fill="{TECH}">in blue</tspan></text>
+<text class="r" {d(0.8)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{INK}">Every day, <tspan font-style="italic" fill="{TECH_TEXT}">in blue</tspan></text>
 <text class="f" {d(0.8)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">REFRESHED DAILY</text>
 {''.join(cells)}
 <g class="f" {d(2.4)}>{labels}
@@ -428,7 +429,7 @@ if __name__ == "__main__":
     data = json.load(open(DATA))
     hero()
     counts = github_counts()
-    tile("build", "BUILD", TECH, "#ffffff", str(counts["own"]), "repos",
+    tile("build", "BUILD", TECH, INK, str(counts["own"]), "repos",
          "Public projects of my own, from campus apps to automation bots.", 3.1, 0)
     tile("brand", "SHIP", STUDIO, "#ffffff", str(counts["live"]), "live",
          "Deployed on Vercel and Netlify, open for anyone to try.", 3.35, 1)
