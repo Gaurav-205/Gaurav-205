@@ -3,14 +3,14 @@
 Render the profile README's cards as animated SVGs into cards/.
 
 Design: "Three Worlds", adapted from avivashishta.com for Gaurav Khandelwal (paper, ink, and one colour per
-world: BUILD blue, BRAND red, LEARN yellow; Instrument Serif, Geist, Geist Mono).
+world: BUILD blue, SHIP red, LEARN yellow; Instrument Serif, Geist, Geist Mono).
 
 Every card is a standalone SVG shown through <img>, so it can only use what GitHub
 allows there: inline CSS animations, SMIL and fonts embedded as data URIs (no JS,
 no external requests). Fonts are subset WOFFs in fonts/ (SIL OFL).
 
 Live numbers come from data/contributions.json (fetch_contributions.py). The
-tile numbers are set by hand below, from Gaurav's resume.
+tile numbers are counted live from the public GitHub profile (github_counts).
 
 Run by .github/workflows/update-profile-art.yml after fetch_contributions.py.
 """
@@ -29,9 +29,8 @@ FONTS = os.path.join(ROOT, "fonts")
 PORTRAIT = os.path.join(ROOT, "gaurav-ascii.svg")
 PORTRAIT_FONT = 15  # this portrait is 85 columns, not 180, so glyphs are drawn larger to fill the same width
 
-# ---- hand-set numbers (update from the resume) ------------------------------
-EVENTS = "35+"
-CGPA = "8.32"
+# ---- fallback numbers, used only when the GitHub API is unreachable -------------
+FALLBACK_COUNTS = {"own": 16, "live": 8, "forks": 10}
 
 # ---- brand tokens -----------------------------------------------------------
 PAPER = "#f3f3f1"
@@ -177,23 +176,23 @@ def hero():
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
 <g class="f" {d(0)}>
   <rect class="live" x="48" y="49" width="8" height="8" rx="2" fill="{TECH}"/>
-  <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">BUSINESS ANALYST INTERN AT EKSTEP</text>
+  <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">PUNE, MAHARASHTRA</text>
 </g>
 <text class="r" {d(0.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="{INK}">Gaurav</text>
 <text class="r" {d(0.3)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Khandelwal</text>
 <g class="r" {d(0.55)}>
-  {text_lines(48, 338, ["I build software, data and AI systems,", "and design for the clubs at my university."], 27, f'font-family="{SANS}" font-size="18" fill="{INK_SOFT}"')}
+  {text_lines(48, 338, ["I build campus apps, AI tools and data", "dashboards, mostly in TypeScript and Python."], 27, f'font-family="{SANS}" font-size="18" fill="{INK_SOFT}"')}
 </g>
 <g class="f" {d(0.8)}>
-  <text x="48" y="396" font-family="{MONO}" font-size="13" fill="{INK}">gauravkhandelwal.codes</text>
-  <text class="nu" x="222" y="396" font-family="{MONO}" font-size="13" fill="{TECH}">&#8599;</text>
+  <text x="48" y="396" font-family="{MONO}" font-size="13" fill="{INK}">github.com/Gaurav-205</text>
+  <text class="nu" x="220" y="396" font-family="{MONO}" font-size="13" fill="{TECH}">&#8599;</text>
 </g>
 <g transform="translate(520 46) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
   {''.join(portrait)}
 </g>
 """
     write("hero.svg", svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
-                          "Gaurav Khandelwal. Business analyst intern at EkStep. I build software, data and AI systems, and design for the clubs at my university."))
+                          "Gaurav Khandelwal, Pune. I build campus apps, AI tools and data dashboards, mostly in TypeScript and Python."))
 
 
 # ---- 2 · world tiles ----------------------------------------------------------
@@ -312,8 +311,8 @@ def activity(data):
 REPO_W, REPO_H = 880 / 3 - 8, 176
 REPOS = [
     ("KampusKart", "Your campus in one app: events, lost and found, complaints, clubs and live chat.", "TypeScript", TECH),
-    ("Munim", "Reads invoice photos on-device and works out what a small supplier is owed. Hack Day Pune winner.", "Python", STUDIO),
-    ("SIH-2026", "Bharosa: blends physics and AI rainfall forecasts for 29 districts in India.", "Python", LEARN),
+    ("LetsSpiceUp", "Prank Wizard: plan, track and manage pranks, with an admin dashboard.", "TypeScript", STUDIO),
+    ("Kalvium-Quiz-Automaion", "kalbot: works through a Kalvium semester's quizzes and assignments with an LLM.", "Python", LEARN),
 ]
 
 
@@ -396,6 +395,22 @@ def heatmap(data):
                              f'Contribution graph: {data["total_contributions"]:,} contributions in the last year'))
 
 
+def github_counts():
+    """Public repos of my own, how many have a live homepage, and repos I forked to study."""
+    try:
+        import requests
+
+        r = requests.get("https://api.github.com/users/Gaurav-205/repos?per_page=100", timeout=10)
+        r.raise_for_status()
+        repos = r.json()
+        own = [x for x in repos if not x["fork"]]
+        return {"own": len(own), "live": sum(1 for x in own if x.get("homepage")),
+                "forks": len(repos) - len(own)}
+    except Exception as e:  # offline: last known numbers
+        print(f"counts unavailable: {e}")
+        return FALLBACK_COUNTS
+
+
 def repo_stars():
     stars = {}
     try:
@@ -413,12 +428,13 @@ def repo_stars():
 if __name__ == "__main__":
     data = json.load(open(DATA))
     hero()
-    tile("build", "BUILD", TECH, "#ffffff", "2", "podiums",
-         "Best Open-Source AI at Hack Day Pune (MLH), and 1st runner-up at ValiCQ 2.0.", 3.1, 0)
-    tile("brand", "DESIGN", STUDIO, "#ffffff", EVENTS, "events",
-         "Design team lead for IDEATE, Astech, ACES and IEEE at MIT ADT.", 3.35, 1)
-    tile("learn", "LEARN", LEARN, INK, CGPA, "CGPA",
-         "B.Tech CSE at MIT ADT University, Pune. Class of 2028.", 3.6, 2)
+    counts = github_counts()
+    tile("build", "BUILD", TECH, "#ffffff", str(counts["own"]), "repos",
+         "Public projects of my own, from campus apps to automation bots.", 3.1, 0)
+    tile("brand", "SHIP", STUDIO, "#ffffff", str(counts["live"]), "live",
+         "Deployed on Vercel and Netlify, open for anyone to try.", 3.35, 1)
+    tile("learn", "LEARN", LEARN, INK, str(counts["forks"]), "forks",
+         "Agent harnesses, GPU sharing and container runtimes I'm reading.", 3.6, 2)
     activity(data)
     stars = repo_stars()
     for i, (name, desc, lang, color) in enumerate(REPOS):
