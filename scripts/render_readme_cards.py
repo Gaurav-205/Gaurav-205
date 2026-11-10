@@ -58,35 +58,40 @@ FONT_FILES = {
     "mono": ("Geist Mono", "normal", 400, "geistmono-400.woff"),
 }
 
+# One easing curve everywhere (expo-out): fast start, long soft landing. Text and cards
+# also sharpen from a light blur as they arrive.
+EASE = "cubic-bezier(.16,1,.3,1)"
 BASE_CSS = """
-@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(14px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-@keyframes pop{0%{opacity:0;transform:scale(.3)}70%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 @keyframes nudge{0%,100%{transform:none}50%{transform:translateX(4px)}}
 @keyframes nudgeup{0%,100%{transform:none}50%{transform:translate(3px,-3px)}}
-.r{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) both;transform-box:fill-box}
-.f{opacity:0;animation:fade .9s ease-out both}
-.g{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow .8s cubic-bezier(.2,.7,.2,1) both}
-.p{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .4s ease-out both}
+.r{opacity:0;animation:rise .9s EASE both;transform-box:fill-box}
+.f{opacity:0;animation:fade .8s ease-out both}
+.g{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow .9s EASE both}
+.p{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .6s EASE both}
 .live{animation:pulse 1.6s ease-in-out infinite}
 .n{transform-box:fill-box;animation:nudge 1.8s ease-in-out infinite}
 .nu{transform-box:fill-box;animation:nudgeup 1.8s ease-in-out infinite}
-@keyframes tilein{0%{opacity:0;transform:translateY(90px) scale(.6) rotate(-9deg)}55%{opacity:1;transform:translateY(-10px) scale(1.05) rotate(2deg)}75%{transform:translateY(3px) scale(.98) rotate(-.8deg)}90%{transform:translateY(-1px) scale(1.01) rotate(.2deg)}100%{opacity:1;transform:none}}
-@keyframes slidein{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
-@keyframes arrowin{0%{opacity:0;transform:translateX(-30px)}60%{opacity:1;transform:translateX(6px)}100%{opacity:1;transform:none}}
+@keyframes tilein{from{opacity:0;transform:translateY(28px) scale(.96);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@keyframes slidein{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+@keyframes arrowin{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:none}}
 @keyframes roll{from{transform:translateY(60px)}to{transform:none}}
 @keyframes sheen{0%{transform:translateX(-260px) skewX(-20deg)}22%,100%{transform:translateX(420px) skewX(-20deg)}}
-@keyframes ring{0%{opacity:.7;transform:scale(.2)}100%{opacity:0;transform:scale(2.4)}}
-.ti{opacity:0;transform-box:fill-box;transform-origin:50% 60%;animation:tilein 1.1s cubic-bezier(.2,.8,.2,1) both}
-.sl{opacity:0;transform-box:fill-box;animation:slidein .6s cubic-bezier(.2,.7,.2,1) both}
-.ai{opacity:0;transform-box:fill-box;animation:arrowin .7s cubic-bezier(.2,.7,.2,1) both}
-.ro{transform-box:fill-box;animation:roll .8s cubic-bezier(.15,.8,.2,1) both}
+@keyframes ring{0%{opacity:.6;transform:scale(.2)}100%{opacity:0;transform:scale(2.4)}}
+@keyframes focus{from{opacity:0;transform:scale(.94);filter:blur(12px)}to{opacity:1;transform:none;filter:none}}
+.ti{opacity:0;transform-box:fill-box;transform-origin:50% 60%;animation:tilein 1s EASE both}
+.sl{opacity:0;transform-box:fill-box;animation:slidein .8s EASE both}
+.ai{opacity:0;transform-box:fill-box;animation:arrowin .8s EASE both}
+.ro{transform-box:fill-box;animation:roll .9s EASE both}
 .sh{animation:sheen 5s ease-in-out infinite}
-.rg{opacity:0;transform-box:fill-box;transform-origin:center;animation:ring 1s ease-out both}
-@media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro,.rg{animation:none!important;opacity:1!important;transform:none!important}.sh,.rg{display:none}}
-"""
+.rg{opacity:0;transform-box:fill-box;transform-origin:center;animation:ring 1.2s ease-out both}
+.ul{opacity:0;transform-box:fill-box;transform-origin:center;animation:focus 1.4s EASE both}
+@media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro,.rg,.ul{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}.sh,.rg{display:none}}
+""".replace("EASE", EASE)
 
 
 def font_face(keys):
@@ -113,7 +118,7 @@ def svg(w, h, body, fonts, label, extra_css="", left=0, right=0, bottom=BOTTOM):
     w, h = w + left + right, h + bottom
     css = font_face(fonts) + BASE_CSS + extra_css
     if os.environ.get("STATIC"):  # preview: show every animation at its end state
-        css += ".r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro{animation:none!important;opacity:1!important;transform:none!important}.sh,.rg{display:none}"
+        css += ".r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro,.ul{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}.sh,.rg{display:none}"
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{w:.3f}" height="{h}" viewBox="0 0 {w:.3f} {h}" '
         f'role="img" aria-label="{escape(label)}"><title>{escape(label)}</title>'
@@ -160,12 +165,12 @@ def hero():
     underlay = ""
     if os.path.exists(UNDERLAY):
         b64 = base64.b64encode(open(UNDERLAY, "rb").read()).decode()
-        underlay = (f'<image class="f" style="animation-delay:1.2s;animation-duration:1.4s" x="20" y="37" width="800" '
+        underlay = (f'<image class="ul" style="animation-delay:.9s" x="20" y="37" width="800" '
                     f'height="800" opacity=".45" href="data:image/png;base64,{b64}"/>')
     for i, (y, txt) in enumerate(rows):
         # rows "print" top to bottom like a slow terminal
         portrait.append(
-            f'<text class="f" style="animation-delay:{0.25 + i * 0.018:.3f}s;animation-duration:.35s" '
+            f'<text class="f" style="animation-delay:{0.3 + i * 0.012:.3f}s;animation-duration:.3s" '
             f'xml:space="preserve" x="20" y="{y}" fill="{INK}" font-size="{PORTRAIT_FONT}" '
             f'textLength="800" lengthAdjust="spacing">{txt}</text>'
         )
@@ -179,7 +184,7 @@ def hero():
     <stop offset=".55" stop-color="{TECH_TEXT}"/><stop offset=".64" stop-color="{INK}"/>
     <stop offset="1" stop-color="{INK}"/>
     <animateTransform attributeName="gradientTransform" type="translate" values="-640 0;640 0;640 0"
-      keyTimes="0;.5;1" dur="6s" begin="1.2s" repeatCount="indefinite"/>
+      keyTimes="0;.5;1" dur="6s" begin="1.8s" repeatCount="indefinite"/>
   </linearGradient>
 </defs>
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
@@ -187,9 +192,9 @@ def hero():
   <rect class="live" x="48" y="49" width="8" height="8" rx="2" fill="{TECH}"/>
   <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">BUSINESS ANALYST INTERN AT EKSTEP</text>
 </g>
-<text class="r" {d(0.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Gaurav</text>
-<text class="r" {d(0.3)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Khandelwal</text>
-<g class="r" {d(0.55)}>
+<text class="r" {d(0.2)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Gaurav</text>
+<text class="r" {d(0.35)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Khandelwal</text>
+<g class="r" {d(0.6)}>
   {text_lines(48, 338, ["Curious builder turning AI and data into", "tools that make a real difference."], 27, f'font-family="{SANS}" font-size="18" fill="{INK_SOFT}"')}
 </g>
 <g transform="translate(520 46) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
@@ -273,14 +278,14 @@ def activity(data):
         fill = TECH if is_best else ("#c9c9c4" if partial else INK)
         label = datetime.date.fromisoformat(m["month"] + "-01").strftime("%b")
         bars.append(
-            f'<rect class="g" style="animation-delay:{2.2 + i * 0.07:.2f}s" x="{x:.1f}" y="{base - bh}" '
+            f'<rect class="g" style="animation-delay:{1.6 + i * 0.06:.2f}s" x="{x:.1f}" y="{base - bh}" '
             f'width="{bw:.1f}" height="{bh}" rx="4" fill="{fill}"><title>{label}: {m["total"]:,}</title></rect>'
-            f'<text class="f" style="animation-delay:{2.2 + i * 0.07:.2f}s" x="{x + bw / 2:.1f}" y="{base + 22}" '
+            f'<text class="f" style="animation-delay:{1.6 + i * 0.06:.2f}s" x="{x + bw / 2:.1f}" y="{base + 22}" '
             f'text-anchor="middle" font-family="{MONO}" font-size="11" fill="{MUTED}">{label}</text>'
         )
         if is_best:
             bars.append(
-                f'<text class="p" style="animation-delay:3.2s" x="{x + bw / 2:.1f}" y="{base - bh - 10}" '
+                f'<text class="p" style="animation-delay:2.5s" x="{x + bw / 2:.1f}" y="{base - bh - 10}" '
                 f'text-anchor="middle" font-family="{MONO}" font-size="11" fill="{TECH_TEXT}">{m["total"]:,}</text>'
             )
     cs = data["current_streak"]["length"]
@@ -296,16 +301,16 @@ def activity(data):
     for i, (big, small) in enumerate(stats):
         y = 104 + i * 92
         side.append(
-            f'<g class="r" {d(2.6 + i * 0.15)}>'
+            f'<g class="r" {d(1.9 + i * 0.12)}>'
             f'<text x="650" y="{y}" font-family="{SERIF}" font-size="40" fill="{INK}">{big}</text>'
             f'<text x="650" y="{y + 24}" font-family="{SANS}" font-size="13" fill="{MUTED}">{small}</text></g>'
         )
         if i < 2:
-            side.append(f'<rect class="f" {d(2.6)} x="650" y="{y + 44}" width="190" height="1" fill="{RULE}"/>')
+            side.append(f'<rect class="f" {d(1.9)} x="650" y="{y + 44}" width="190" height="1" fill="{RULE}"/>')
     body = f"""
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
-<text class="f" {d(1.9)} x="40" y="58" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">THE LAST 12 MONTHS ON GITHUB</text>
-<text class="r" {d(2.0)} x="38" y="114" font-family="{SERIF}" font-size="52" fill="{INK}">{data["total_contributions"]:,} <tspan font-style="italic">contributions</tspan></text>
+<text class="f" {d(1.3)} x="40" y="58" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">THE LAST 12 MONTHS ON GITHUB</text>
+<text class="r" {d(1.4)} x="38" y="114" font-family="{SERIF}" font-size="52" fill="{INK}">{data["total_contributions"]:,} <tspan font-style="italic">contributions</tspan></text>
 {''.join(bars)}
 {''.join(side)}
 """
@@ -335,7 +340,7 @@ def heatmap(data):
             seen.add((date.year, date.month))
             months.append((col, date.strftime("%b")))
         c = day["count"]
-        delay = 1.0 + col * 0.03 + row * 0.02
+        delay = 0.7 + col * 0.022 + row * 0.015
         cells.append(
             f'<rect class="p" style="animation-delay:{delay:.2f}s" x="{gx + col * step}" y="{gy + row * step}" '
             f'width="{cell}" height="{cell}" rx="3" fill="{BLUE[level_for(c)]}">'
@@ -355,10 +360,10 @@ def heatmap(data):
     h = gy + 7 * step + 44
     body = f"""
 <rect width="{W}" height="{h}" rx="14" fill="{PAPER}"/>
-<text class="r" {d(0.8)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{INK}">Every day, <tspan font-style="italic" fill="{TECH_TEXT}">in blue</tspan></text>
-<text class="f" {d(0.8)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">REFRESHED DAILY</text>
+<text class="r" {d(0.5)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{INK}">Every day, <tspan font-style="italic" fill="{TECH_TEXT}">in blue</tspan></text>
+<text class="f" {d(0.5)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MUTED}">REFRESHED DAILY</text>
 {''.join(cells)}
-<g class="f" {d(2.4)}>{labels}
+<g class="f" {d(1.8)}>{labels}
 <text x="{legend_x - 8}" y="{gy + 7 * step + 16}" text-anchor="end" font-family="{MONO}" font-size="11" fill="{MUTED}">less</text>
 {legend}
 <text x="{legend_x + len(BLUE) * 14 + 2}" y="{gy + 7 * step + 16}" font-family="{MONO}" font-size="11" fill="{MUTED}">more</text></g>
@@ -388,10 +393,10 @@ if __name__ == "__main__":
     hero()
     counts = github_counts()
     tile("build", "BUILD", TECH, INK, str(counts["own"]), "repos",
-         "Public projects of my own, from campus apps to automation bots.", 3.1, 0)
+         "Public projects of my own, from campus apps to automation bots.", 2.3, 0)
     tile("brand", "SHIP", STUDIO, "#ffffff", str(counts["live"]), "live",
-         "Deployed on Vercel and Netlify, open for anyone to try.", 3.35, 1)
+         "Deployed on Vercel and Netlify, open for anyone to try.", 2.45, 1)
     tile("learn", "LEARN", LEARN, INK, str(counts["forks"]), "forks",
-         "Agent harnesses, GPU sharing and container runtimes I'm reading.", 3.6, 2)
+         "Agent harnesses, GPU sharing and container runtimes I'm reading.", 2.6, 2)
     activity(data)
     heatmap(data)
