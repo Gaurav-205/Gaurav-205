@@ -181,14 +181,14 @@ def hero():
 <text class="r" {d(0.15)} x="44" y="190" font-family="{SERIF}" font-size="116" letter-spacing="-2.5" fill="{INK}">Gaurav</text>
 <text class="r" {d(0.3)} x="44" y="290" font-family="{SERIF}" font-style="italic" font-size="116" letter-spacing="-2.5" fill="url(#shine)">Khandelwal</text>
 <g class="r" {d(0.55)}>
-  {text_lines(48, 338, ["I love building things people actually use:", "campus apps, AI tools and data dashboards.", "Always shipping, always learning!"], 27, f'font-family="{SANS}" font-size="18" fill="{INK_SOFT}"')}
+  {text_lines(48, 338, ["I'm a developer who believes software can make", "a real difference. Always learning, I build AI", "and data tools that inspire positive change."], 27, f'font-family="{SANS}" font-size="18" fill="{INK_SOFT}"')}
 </g>
 <g transform="translate(520 46) scale({s}) translate(-20 -37)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
   {''.join(portrait)}
 </g>
 """
     write("hero.svg", svg(W, h, body, ["serif", "serif-i", "sans", "mono"],
-                          "Gaurav Khandelwal. Business analyst intern at EkStep. I love building things people actually use: campus apps, AI tools and data dashboards. Always shipping, always learning!"))
+                          "Gaurav Khandelwal. Business analyst intern at EkStep. I'm a developer who believes software can make a real difference. Always learning, I build AI and data tools that inspire positive change."))
 
 
 # ---- 2 · world tiles ----------------------------------------------------------
