@@ -27,6 +27,7 @@ DATA = os.path.join(ROOT, "data", "contributions.json")
 OUT = os.path.join(ROOT, "cards")
 FONTS = os.path.join(ROOT, "fonts")
 PORTRAIT = os.path.join(ROOT, "gaurav-ascii.svg")
+PORTRAIT_FONT = 7.2  # same as the reference: 180 columns across 800px
 
 # ---- fallback numbers, used only when the GitHub API is unreachable -------------
 FALLBACK_COUNTS = {"own": 16, "live": 8, "forks": 10}
@@ -159,7 +160,7 @@ def hero():
         # rows "print" top to bottom like a slow terminal
         portrait.append(
             f'<text class="f" style="animation-delay:{0.25 + i * 0.018:.3f}s;animation-duration:.35s" '
-            f'xml:space="preserve" x="20" y="{y}" fill="{INK}" font-size="11" '
+            f'xml:space="preserve" x="20" y="{y}" fill="{INK}" font-size="{PORTRAIT_FONT}" '
             f'textLength="800" lengthAdjust="spacing">{txt}</text>'
         )
     s = 0.41

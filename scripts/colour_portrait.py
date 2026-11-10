@@ -1,24 +1,25 @@
 #!/usr/bin/env python3
 """
-Draw the hero portrait (gaurav-ascii.svg) as colour ASCII from the GitHub avatar.
+Colour the ASCII portrait with the GitHub avatar's colours.
 
-Same canvas and row format as the reference make_ascii_svg.py (180 x 96 cells,
-x=20, textLength=800), so render_readme_cards.py reads it unchanged. Each run of
-characters gets a <tspan fill> sampled from the avatar. Because colour carries the
-picture, every non-background cell uses a dense glyph; thin ones like '.' would
-hide the colour.
+Step 1 makes the black-and-white portrait with the reference converter:
+    python make_ascii_svg.py prepped.png base-ascii.svg
+(prepped.png = the avatar with its flat blue backdrop keyed to white, then
+grayscale). Step 2, this script, keeps every character of that portrait and
+wraps runs of them in <tspan fill> sampled from the same spot of the avatar.
+make_ascii_svg.py resizes the whole image to COLS x ROWS without cropping, so
+cell (x, y) maps straight onto the resized avatar.
 
-The avatar is a flat drawing on a solid blue (#02BAFF) background, which is keyed
-out to blank cells. Light colours (white hair, glasses) are darkened so they still
-read on the paper card.
+Colours are darkened and saturated, because pale colours on the paper card read
+as washed out, and glyphs are bold for the same reason. White hair and glasses take a deep slate version of the avatar blue.
 
-Run by hand; needs Pillow.
-    python scripts/colour_portrait.py [avatar.png]
+    python scripts/colour_portrait.py base-ascii.svg [avatar.png]
 """
 import colorsys
 import html
 import io
 import os
+import re
 import sys
 import urllib.request
 
@@ -26,70 +27,52 @@ from PIL import Image
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 OUT = os.path.join(ROOT, "gaurav-ascii.svg")
-COLS, ROWS = 180, 96          # same grid as make_ascii_svg.py
-TOP, STEP_Y = 43.2, 8.333     # row baselines, as in the reference portrait
-RAMP = "-=+*#%@"              # light -> dark, dense glyphs only
-MAX_LUM = 0.40                # lighter colours are scaled down to this
-SAT = 1.8                     # saturation boost
-TINT_HUE, TINT_SAT = 0.54, 0.65  # whites and greys (hair, glasses) take the avatar blue (#02BAFF)
-QUANT = 24                    # colour rounding, so neighbours share one tspan
+MAX_LUM = 0.34       # every colour is at most this light, so glyphs stay strong
+SAT = 1.7            # saturation boost
+TINT_HUE, TINT_SAT = 0.56, 0.45  # whites and greys become a slate blue
+QUANT = 24           # colour rounding, so neighbours share one tspan
 
-if len(sys.argv) > 1:
-    avatar = Image.open(sys.argv[1])
+base = open(sys.argv[1]).read()
+if len(sys.argv) > 2:
+    avatar = Image.open(sys.argv[2])
 else:
     avatar = Image.open(io.BytesIO(urllib.request.urlopen("https://github.com/Gaurav-205.png?size=460").read()))
-avatar = avatar.convert("RGB")
+
+rows = re.findall(r'<text xml:space="preserve"[^>]*\by="([\d.]+)"[^>]*>(.*?)</text>', base, re.S)
+lines = [html.unescape(re.sub(r"<[^>]+>", "", t)) for _, t in rows]
+cols = max(len(l) for l in lines)
+img = avatar.convert("RGB").resize((cols, len(lines)), Image.LANCZOS).load()
 
 
-def is_bg(r, g, b):
-    return b > 200 and r < 90 and g > 150
-
-
-# key the background before resizing, so edge cells don't pick up blue
-full = avatar.copy()
-fp = full.load()
-mask = Image.new("L", full.size, 0)
-mp = mask.load()
-for y in range(full.size[1]):
-    for x in range(full.size[0]):
-        if is_bg(*fp[x, y]):
-            mp[x, y] = 255
-img = full.resize((COLS, ROWS), Image.LANCZOS).load()
-bg = mask.resize((COLS, ROWS), Image.LANCZOS).load()
-
-
-def cell(x, y):
-    if bg[x, y] > 128:
-        return " ", None
+def colour(x, y):
     r, g, b = (v / 255 for v in img[x, y])
-    lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
-    ch = RAMP[min(len(RAMP) - 1, int((1 - lum) * len(RAMP)))]
     h, l, s = colorsys.rgb_to_hls(r, g, b)
-    if s < 0.15 and lum > 0.25:  # near-white or grey, not the black outlines
+    if s < 0.15:
         h, s = TINT_HUE, TINT_SAT
     r, g, b = colorsys.hls_to_rgb(h, l, min(1, s * SAT))
+    lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
     if lum > MAX_LUM:
         r, g, b = (v * MAX_LUM / lum for v in (r, g, b))
     r, g, b = (min(255, int(round(v * 255 / QUANT) * QUANT)) for v in (r, g, b))
-    return ch, f"#{r:02x}{g:02x}{b:02x}"
+    return f"#{r:02x}{g:02x}{b:02x}"
 
 
-rows = []
-for y in range(ROWS):
+out = []
+for (y, _), line in zip(rows, lines):
     parts, run, fill = [], "", None
-    for x in range(COLS):
-        ch, f = cell(x, y)
+    for x, ch in enumerate(line):
+        f = None if ch == " " else colour(x, len(out))
         if f != fill and run:
             parts.append(html.escape(run) if fill is None else f'<tspan fill="{fill}">{html.escape(run)}</tspan>')
             run = ""
         fill = f
         run += ch
-    parts.append(html.escape(run) if fill is None else f'<tspan fill="{fill}">{html.escape(run)}</tspan>')
-    rows.append(f'<text xml:space="preserve" x="20" y="{TOP + y * STEP_Y:.1f}" font-size="7.2" '
-                f'textLength="800" lengthAdjust="spacing"><tspan font-weight="700">{"".join(parts)}</tspan></text>')
+    if run:
+        parts.append(html.escape(run) if fill is None else f'<tspan fill="{fill}">{html.escape(run)}</tspan>')
+    out.append(f'<text xml:space="preserve" x="20" y="{y}" font-size="7.2" textLength="800" '
+               f'lengthAdjust="spacing"><tspan font-weight="700">{"".join(parts)}</tspan></text>')
 
 svg = ('<svg xmlns="http://www.w3.org/2000/svg" width="840" height="880" viewBox="0 0 840 880" '
-       f'font-family="ui-monospace, monospace">{"".join(rows)}</svg>')
-with open(OUT, "w") as f:
-    f.write(svg)
-print(f"wrote {OUT} ({len(svg) // 1024} KB)")
+       f'font-family="ui-monospace, monospace">{"".join(out)}</svg>')
+open(OUT, "w").write(svg)
+print(f"wrote {OUT}: {len(out)} rows x {cols} cols ({len(svg) // 1024} KB)")
